@@ -106,8 +106,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  projectile: {fileID: 0}
+  projectile: {fileID: 899980313321387512, guid: 7ce172a0bba4d4c7282c9e22466991c2,
+    type: 3}
   maximumLookDistance: 30
   maximumAttackDistance: 10
   rotationDamping: 2
   shotInterval: 0.5
+  health: 100

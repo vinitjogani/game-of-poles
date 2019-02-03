@@ -1,0 +1,33 @@
+# =============== #
+# Unity generated #
+# =============== #
+TheGame/Temp/
+TheGame/Library/
+TheGame/.vs/
+*.meta
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+TheGame/ExportedObj/
+TheGame/obj/
+TheGame/*.svd
+TheGame/*.userprefs
+TheGame/*.csproj
+TheGame/*.pidb
+TheGame/*.suo
+TheGame/*.sln
+TheGame/*.user
+TheGame/*.unityproj
+TheGame/*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+TheGame/.DS_Store
+TheGame/.DS_Store?
+TheGame/._*
+TheGame/.Spotlight-V100
+TheGame/.Trashes
+TheGame/ehthumbs.db
+TheGame/Thumbs.db

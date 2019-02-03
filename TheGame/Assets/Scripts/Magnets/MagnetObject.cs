@@ -17,6 +17,9 @@ public class MagnetObject
         this.strength = strength;
 
         renderer = obj.GetComponent<Renderer>();
-        originalColor = renderer.material.color;
+        if (renderer)
+        {
+            originalColor = renderer.material.color;
+        }
     }
 }

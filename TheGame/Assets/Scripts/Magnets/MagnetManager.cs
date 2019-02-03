@@ -22,6 +22,13 @@ public class MagnetManager : MonoBehaviour
     {
         for(int i = 0; i < objects.Count; i++)
         {
+            if(!objects[i].obj.activeSelf)
+            {
+                objects.RemoveAt(i);
+                i--;
+                continue;
+            }
+
             var body = objects[i].obj.GetComponent<Rigidbody>();
             if (body && !objects[i].obj.CompareTag("Still"))
             {
@@ -57,7 +64,7 @@ public class MagnetManager : MonoBehaviour
 
         Color magnetColor = colors[objects[i].pole];
         Color lerpColor = Color.Lerp(objects[i].originalColor, magnetColor, objects[i].time / magnetizeTime);
-        objects[i].renderer.material.color = lerpColor;
+        if(objects[i].renderer) objects[i].renderer.material.color = lerpColor;
 
         if (objects[i].time <= 0)
         {

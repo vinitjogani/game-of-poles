@@ -94,6 +94,8 @@ public class EnemyAI : MonoBehaviour
     {
         var body = collision.gameObject.GetComponent<Rigidbody>();
         float mass = body ? body.mass : 1;
-        this.health -= collision.relativeVelocity.magnitude * mass;
+
+        // Kinetic energy = damage
+        this.health -= 0.5f * mass * Mathf.Pow(collision.relativeVelocity.magnitude, 2);
     }
 }

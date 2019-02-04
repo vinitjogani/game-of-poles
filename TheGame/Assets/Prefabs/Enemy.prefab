@@ -62,7 +62,7 @@ MonoBehaviour:
   maximumAttackDistance: 10
   rotationDamping: 2
   shotInterval: 1
-  maxHealth: 100
+  maxHealth: 500
   healthbarBackground: {fileID: 2800000, guid: 4de0e403bca315e49a4c83f12548e6b4, type: 3}
   healthbarForeground: {fileID: 2800000, guid: 7895f2f4ae3c3a14eae5aa952c91b074, type: 3}
 --- !u!1 &5411413450448100532

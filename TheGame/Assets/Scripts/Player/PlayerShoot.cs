@@ -31,41 +31,12 @@ public class PlayerShoot : MonoBehaviour
                 Fire(Pole.SOUTH);
             }
         }
-        
+
 
         if (reload > 0)
         {
             reload -= Time.deltaTime;
         }
-
-        //RaycastHit hit;
-        //if(Physics.Raycast(transform.position, transform.forward, out hit))
-        //{
-        //    var obj = hit.collider.gameObject;
-        //    if((oldObj == null || obj.name != oldObj.name) && !obj.CompareTag("Bullet"))
-        //    {
-        //        if (oldObj != null)
-        //        {
-        //            oldObj.GetComponent<Renderer>().material.color = oldColor;
-        //        }
-
-        //        var render = obj.GetComponent<Renderer>();
-        //        oldColor = render.material.color;
-        //        render.material.color = Color.red;
-
-        //        oldObj = obj;
-        //    }
-        //}
-        //else
-        //{
-        //    if (oldObj != null)
-        //    {
-        //        var render = oldObj.GetComponent<Renderer>();
-        //        render.material.color = oldColor;
-
-        //        oldObj = null;
-        //    }
-        //}
     }
 
     void Fire(Pole type)

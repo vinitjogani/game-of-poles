@@ -22,21 +22,22 @@ public class MagnetManager : MonoBehaviour
     {
         for(int i = 0; i < objects.Count; i++)
         {
-            if(!objects[i].obj.activeSelf)
+            try
+            {
+                var body = objects[i].obj.GetComponent<Rigidbody>();
+                if (body && !objects[i].obj.CompareTag("Still"))
+                {
+                    var force = CalculateForce(i);
+                    body.AddForce(force * magnetStrength * objects[i].strength);
+                }
+
+                if (UpdateTime(i)) i--;
+            }
+            catch (MissingReferenceException e)
             {
                 objects.RemoveAt(i);
                 i--;
-                continue;
             }
-
-            var body = objects[i].obj.GetComponent<Rigidbody>();
-            if (body && !objects[i].obj.CompareTag("Still"))
-            {
-                var force = CalculateForce(i);
-                body.AddForce(force * magnetStrength * objects[i].strength);
-            }
-
-            if (UpdateTime(i)) i--;
         }        
     }
 

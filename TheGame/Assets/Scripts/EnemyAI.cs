@@ -26,7 +26,7 @@ public class EnemyAI : MonoBehaviour
 
     private void OnDestroy()
     {
-        var manager = GameObject.FindObjectOfType<MagnetManager>();
+        var manager = FindObjectOfType<MagnetManager>();
         manager.objects.RemoveAll(x => x.obj == gameObject);
     }
 

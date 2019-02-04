@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6893307817613362157}
   - component: {fileID: 6893307817613362152}
   - component: {fileID: 6893307817613362155}
-  - component: {fileID: 6893307817613362154}
+  - component: {fileID: 8489892062217926454}
   m_Layer: 0
   m_Name: Gunpoint
   m_TagString: Bullet
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b772212f0be3cbf4aa816448ed2ab497, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &6893307817613362154
+--- !u!114 &8489892062217926454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6893307817613362156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbd007d72efd21449af7a388e45d5f77, type: 3}
+  m_Script: {fileID: 11500000, guid: 92b4a3272eaf741218962f16b3c7813c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6893307817656979343
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6893307817656979340}
   - component: {fileID: 6893307817656979338}
   - component: {fileID: 6893307817656979341}
-  - component: {fileID: 6893307817656979339}
+  - component: {fileID: 8669219898768523419}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -154,7 +154,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6893307817656979339
+--- !u!114 &8669219898768523419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6893307817656979343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b44c34a7f67fd434683122d62199a2b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 19d76449331d84e7784e459d74345a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   teleportSpeed: 2
@@ -222,8 +222,8 @@ GameObject:
   - component: {fileID: 6893307819072841191}
   - component: {fileID: 6893307819072841190}
   - component: {fileID: 6893307819072841209}
-  - component: {fileID: 6893307819072841189}
-  - component: {fileID: 6893307819072841186}
+  - component: {fileID: 7433738549065705973}
+  - component: {fileID: 5059915702623789235}
   m_Layer: 0
   m_Name: Head
   m_TagString: MainCamera
@@ -296,7 +296,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6893307819072841208}
   m_Enabled: 1
---- !u!114 &6893307819072841189
+--- !u!114 &7433738549065705973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -305,16 +305,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 6893307819072841208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7bccaae9b33324ba53c5e224039673, type: 3}
+  m_Script: {fileID: 11500000, guid: a8bdb90fd39b748bcbf950f26a0791c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   axes: 0
-  sensitivityX: 5
-  sensitivityY: 5
+  sensitivityX: 15
+  sensitivityY: 15
   minimumY: -60
   maximumY: 60
   frameCounter: 20
---- !u!114 &6893307819072841186
+--- !u!114 &5059915702623789235
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -323,9 +323,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6893307819072841208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00303a85aa6663b44a862f3fc190c4f6, type: 3}
+  m_Script: {fileID: 11500000, guid: ce9248e84b134400289e533cdb8d48da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 4203056227193294794, guid: 0842f18cdac6e624f8501de664b4c23a,
+  arrowPrefab: {fileID: 5201793133111132619, guid: 9648ff0201d6740ad9b43595516e0357,
     type: 3}
-  reloadTime: 0.5

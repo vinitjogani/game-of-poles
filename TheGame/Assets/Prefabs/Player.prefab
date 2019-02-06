@@ -289,9 +289,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6839f36b647c64a958a5659698e72e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 1
-  minVelocity: 0.1
-  stepSize: 0.1
+  maxMass: 1
+  minMass: 0.05
+  stepMass: 0.25
+  thresholdMass: 0.9
   arrowPrefab: {fileID: 7310455909514632390, guid: a1f6a9e64d1be734d9a1ca5e708ddb30,
     type: 3}
 --- !u!1 &5887596095080850570
@@ -319,7 +320,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5887596095080850570}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3, y: 3, z: 38}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:

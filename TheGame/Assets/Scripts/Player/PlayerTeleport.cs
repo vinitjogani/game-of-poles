@@ -11,6 +11,7 @@ public class PlayerTeleport : MonoBehaviour
     private Texture2D black;
 
     private Transform teleportTo;
+    private GameObject old;
 
     private void Start()
     {
@@ -38,7 +39,8 @@ public class PlayerTeleport : MonoBehaviour
                 direction = -direction;
 
                 var tPos = teleportTo.position;
-                transform.position = new Vector3(tPos.x, tPos.y + transform.localScale.y / 2, tPos.z);
+                var collider = GetComponentInChildren<BoxCollider>();
+                transform.position = new Vector3(tPos.x, tPos.y + collider.size.y * 0.75f, tPos.z) - collider.transform.localPosition;
             }
             else if (alpha <= 0f)
             {
@@ -50,16 +52,27 @@ public class PlayerTeleport : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.T))
+        var teleporter = GetClosestTeleporter();
+
+        if (teleporter)
         {
-            var teleporter = GetClosestTeleporter();
-            if (teleporter)
+            var render = teleporter.GetComponent<Renderer>();
+            render.material.SetColor("_EmissionColor", new Color(0, 66 / 255f, 113 / 255f));
+
+            if (Input.GetKey(KeyCode.T))
             {
                 teleportTo = teleporter.transform;
                 teleporter.GetComponent<AudioSource>().Play();
                 direction = Time.deltaTime * teleportSpeed;
             }
         }
+
+        if (teleporter != old && old)
+        {
+            old.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.black);
+        }
+
+        old = teleporter;
     }
 
     GameObject GetClosestTeleporter()
@@ -69,21 +82,33 @@ public class PlayerTeleport : MonoBehaviour
 
         foreach (var teleporter in GameObject.FindGameObjectsWithTag("Teleporter"))
         {
-            Vector3 v = Camera.main.WorldToViewportPoint(teleporter.transform.position);
-            if (!(v.x >= 0 && v.x <= 1 && v.y >= 0 && v.y <= 1 && v.z > 0)) continue;
+            var cam = Camera.main.transform;
 
-            if (teleporter.GetComponent<Teleporter>().isEnabled)
+            RaycastHit hit;
+            Physics.Raycast(cam.position, teleporter.transform.position - cam.position, out hit);
+
+            var teleport = hit.collider.GetComponentInChildren<Teleporter>();
+            if (!teleport || !teleport.isEnabled || !InSight(teleporter)) continue;
+
+            var dir = teleport.transform.position - cam.position;
+            var angularDist = Vector3.AngleBetween(dir, cam.forward);
+
+            if (angularDist < minDistance || minDistance < 0)
             {
-                var point = teleporter.GetComponent<Collider>().ClosestPoint(transform.position);
-                var distance = (point - transform.position).magnitude;
-                if (minDistance == -1 || distance < minDistance)
-                {
-                    closest = teleporter;
-                    minDistance = distance;
-                }
+                minDistance = angularDist;
+                closest = teleporter;
             }
         }
 
         return closest;
+    }
+
+    bool InSight(GameObject teleporter)
+    {
+        Vector3 v = Camera.main.WorldToViewportPoint(teleporter.transform.position);
+        if (!(v.x >= 0 && v.x <= 1 && v.y >= 0 && v.y <= 1 && v.z > 0))
+            return false;
+        else 
+            return true;
     }
 }

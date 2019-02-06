@@ -8,6 +8,8 @@ public class Teleporter : MonoBehaviour
 
     private Renderer renderer;
     private ParticleSystem particleSystem;
+
+    private Color originalColor;
    
     // Start is called before the first frame update
     void Start()
@@ -15,17 +17,18 @@ public class Teleporter : MonoBehaviour
         renderer = GetComponent<Renderer>();
         particleSystem = GetComponent<ParticleSystem>();
 
-        renderer.enabled = false;
+        originalColor = renderer.material.color;
+        renderer.material.color = Color.red;
         particleSystem.Stop();
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("TeleporterRange"))
+        if (other.CompareTag("TeleporterRange") && !isEnabled)
         {
             isEnabled = true;
             particleSystem.Play();
-            renderer.enabled = true;
+            renderer.material.color = originalColor;
         }
     }
 
@@ -35,7 +38,7 @@ public class Teleporter : MonoBehaviour
         {
             isEnabled = false;
             particleSystem.Stop();
-            renderer.enabled = false;
+            renderer.material.color = Color.red;
         }
     }
 }

@@ -29,7 +29,7 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.isTrigger && !other.CompareTag("Player"))
+        if (!other.isTrigger && other.name != "Body")
         {
             MagnetObject magnetObject = new MagnetObject(other.gameObject, type, MagnetManager.magnetizeTime);
             var manager = FindObjectOfType<MagnetManager>();
@@ -38,7 +38,7 @@ public class Ball : MonoBehaviour
             if (search != null)
             {
                 search.time = MagnetManager.magnetizeTime;
-                search.strength *= 1.1f;
+                search.strength = Mathf.Min(MagnetManager.maxStrength, search.strength * MagnetManager.strengthCompound);
                 search.pole = type;
             }
             else

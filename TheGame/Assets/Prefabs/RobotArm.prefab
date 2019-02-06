@@ -47,16 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a23b46cf3e6549f098bf32ec1643ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   projectile: {fileID: 899980313321387512, guid: 7ce172a0bba4d4c7282c9e22466991c2,
     type: 3}
   maximumLookDistance: 30
   maximumAttackDistance: 10
   rotationDamping: 2
   shotInterval: 1
-  maxHealth: 1000
-  healthbarBackground: {fileID: 2800000, guid: 4de0e403bca315e49a4c83f12548e6b4, type: 3}
-  healthbarForeground: {fileID: 2800000, guid: 7895f2f4ae3c3a14eae5aa952c91b074, type: 3}
 --- !u!54 &8258575797720971368
 Rigidbody:
   m_ObjectHideFlags: 0

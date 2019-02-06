@@ -11,11 +11,14 @@ public class MagnetManager : MonoBehaviour
         [Pole.SOUTH] = Color.blue
     };
 
+    public static float magnetStrength = 20f;
     public static float magnetizeTime = 5f;
+    public static float maxStrength = 30f;
+    public static float strengthCompound = 1.1f;
+
     public List<MagnetObject> objects = new List<MagnetObject>();
 
     public float distanceDecay = 1f;
-    public float magnetStrength = 10f;
 
     // Update is called once per frame
     void FixedUpdate()

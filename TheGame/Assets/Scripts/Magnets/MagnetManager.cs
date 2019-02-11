@@ -56,7 +56,7 @@ public class MagnetManager : MonoBehaviour
             Vector3 difference = closestPoint - position;
             if (otherObject.pole == objects[i].pole) difference = -difference;
 
-            float magnitude = Mathf.Max(0.1f, difference.magnitude) * distanceDecay;
+            float magnitude = Mathf.Max(0.001f, difference.magnitude) * distanceDecay;
             force += difference * otherObject.strength / magnitude;
         }
         return force;

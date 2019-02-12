@@ -12,9 +12,6 @@ public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth;
 
-    private float initialY;
-    private bool duck = false;
-
     private Texture2D black;
     private float health;
 
@@ -35,7 +32,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        Duck();
         PlayerState.respwanAt = transform.position;
         PlayerState.rotation = Camera.main.transform.rotation;
     }
@@ -58,21 +54,5 @@ public class PlayerHealth : MonoBehaviour
     void RestartLevel()
     {
         SceneManager.LoadScene("FinalTutorial");
-    }
-
-
-    void Duck()
-    {
-        if (Input.GetKey(KeyCode.LeftShift) && !duck)
-        {
-            initialY = transform.position.y;
-            duck = true;
-            transform.position = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
-        }
-        else if (duck && !Input.GetKey(KeyCode.LeftShift))
-        {
-            duck = false;
-            transform.position = new Vector3(transform.position.x, initialY, transform.position.z);
-        }
     }
 }

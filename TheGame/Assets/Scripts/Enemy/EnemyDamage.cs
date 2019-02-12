@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
+    public GameObject deathAudio;
     public Texture healthbarBackground;
     public Texture healthbarForeground;
     public float maxHealth = 100f;
@@ -23,7 +24,11 @@ public class EnemyDamage : MonoBehaviour
 
     private void Update()
     {
-        if (health <= 0) Destroy(gameObject);
+        if (health <= 0)
+        {
+            Instantiate(deathAudio).transform.position = transform.position;
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

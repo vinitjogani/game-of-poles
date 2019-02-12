@@ -55,16 +55,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a23b46cf3e6549f098bf32ec1643ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   projectile: {fileID: 899980313321387512, guid: 7ce172a0bba4d4c7282c9e22466991c2,
     type: 3}
   maximumLookDistance: 30
   maximumAttackDistance: 10
   rotationDamping: 2
   shotInterval: 1
-  maxHealth: 500
-  healthbarBackground: {fileID: 2800000, guid: 4de0e403bca315e49a4c83f12548e6b4, type: 3}
-  healthbarForeground: {fileID: 2800000, guid: 7895f2f4ae3c3a14eae5aa952c91b074, type: 3}
 --- !u!1 &5411413450448100532
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,7 +73,7 @@ GameObject:
   - component: {fileID: 45192358460374505}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

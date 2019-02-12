@@ -31,6 +31,8 @@ public class Ball : MonoBehaviour
     {
         if (!other.isTrigger && other.name != "Body")
         {
+            Destroy(gameObject);
+
             MagnetObject magnetObject = new MagnetObject(other.gameObject, type, MagnetManager.magnetizeTime);
             var manager = FindObjectOfType<MagnetManager>();
 
@@ -45,7 +47,6 @@ public class Ball : MonoBehaviour
             {
                 manager.objects.Add(magnetObject);
             }
-            Destroy(gameObject);
         }
     }
 }

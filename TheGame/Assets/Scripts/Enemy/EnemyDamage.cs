@@ -38,17 +38,31 @@ public class EnemyDamage : MonoBehaviour
     // Display a health bar
     void OnGUI()
     {
-        var p = Camera.main.WorldToScreenPoint(transform.position);
-        p.y = Screen.height - p.y;
+        if (InSight())
+        {
+            var p = Camera.main.WorldToScreenPoint(transform.position);
+            p.y = Screen.height - p.y;
 
-        var dist = (transform.position - Camera.main.transform.position).magnitude;
-        var size = Mathf.Max(5f, 20f - dist);
+            var dist = (transform.position - Camera.main.transform.position).magnitude;
+            var size = Mathf.Max(5f, 20f - dist);
 
-        GUI.DrawTexture(new Rect(p.x - size * 10, p.y - 100, size * 20, size),
-                        healthbarBackground, ScaleMode.StretchToFill, true);
-        // Draw Foreground
-        GUI.DrawTexture(new Rect(p.x - size * 10, p.y - 100, size * 20 * health / maxHealth, size),
-                        healthbarForeground, ScaleMode.StretchToFill, true,
-                        ((healthbarForeground.width * health) / healthbarForeground.height));
+            GUI.DrawTexture(new Rect(p.x - size * 10, p.y - 100, size * 20, size),
+                            healthbarBackground, ScaleMode.StretchToFill, true);
+            // Draw Foreground
+            GUI.DrawTexture(new Rect(p.x - size * 10, p.y - 100, size * 20 * health / maxHealth, size),
+                            healthbarForeground, ScaleMode.StretchToFill, true,
+                            ((healthbarForeground.width * health) / healthbarForeground.height));
+        }
+    }
+
+
+    bool InSight()
+    {
+        var camPos = Camera.main.transform.position;
+
+        RaycastHit hit;
+        if (Physics.Raycast(camPos, transform.position - camPos, out hit))
+            return hit.collider.gameObject == gameObject;
+        return false;
     }
 }

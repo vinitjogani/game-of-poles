@@ -11,7 +11,7 @@ public class PlayerTeleport : MonoBehaviour
     private Texture2D black;
 
     private Transform teleportTo;
-    private GameObject old;
+    private Teleporter old;
 
     private void Start()
     {
@@ -56,29 +56,33 @@ public class PlayerTeleport : MonoBehaviour
 
         if (teleporter)
         {
-            var render = teleporter.GetComponent<Renderer>();
-            render.material.SetColor("_EmissionColor", new Color(0, 66 / 255f, 113 / 255f));
+            teleporter.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0, 66 / 255f, 113 / 255f));
+            if (!teleporter.particles.isPlaying) teleporter.particles.Play();
 
             if (Input.GetKey(KeyCode.T))
             {
                 teleportTo = teleporter.transform;
                 teleporter.GetComponent<AudioSource>().Play();
                 direction = Time.deltaTime * teleportSpeed;
+                teleporter.particles.Stop();
             }
         }
 
         if (teleporter != old && old)
         {
+            old.particles.Stop();
             old.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.black);
         }
 
         old = teleporter;
     }
 
-    GameObject GetClosestTeleporter()
+    Teleporter GetClosestTeleporter()
     {
-        GameObject closest = null;
+        Teleporter closest = null;
         float minDistance = -1;
+
+        var radius = GetComponentInChildren<SphereCollider>();
 
         foreach (var teleporter in GameObject.FindGameObjectsWithTag("Teleporter"))
         {
@@ -86,17 +90,18 @@ public class PlayerTeleport : MonoBehaviour
 
             RaycastHit hit;
             Physics.Raycast(cam.position, teleporter.transform.position - cam.position, out hit);
-
+            
             var teleport = hit.collider.GetComponentInChildren<Teleporter>();
             if (!teleport || !teleport.isEnabled || !InSight(teleporter)) continue;
 
             var dir = teleport.transform.position - cam.position;
-            var angularDist = Vector3.AngleBetween(dir, cam.forward);
+            var angularDist = Vector3.Angle(dir, cam.forward);
+
 
             if (angularDist < minDistance || minDistance < 0)
             {
                 minDistance = angularDist;
-                closest = teleporter;
+                closest = teleport;
             }
         }
 

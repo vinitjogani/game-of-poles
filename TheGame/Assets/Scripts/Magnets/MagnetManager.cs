@@ -7,18 +7,18 @@ public class MagnetManager : MonoBehaviour
 {
     private static Dictionary<Pole, Color> colors = new Dictionary<Pole, Color>
     {
-        [Pole.NORTH] = Color.red,
-        [Pole.SOUTH] = Color.blue
+        [Pole.NORTH] = new Color(9 / 255f, 132 / 255f, 227 / 255f),
+        [Pole.SOUTH] = new Color(192 / 255f, 57 / 255f, 43 / 255f)
     };
 
-    public static float magnetStrength = 20f;
+    public static float magnetStrength = 50f;
     public static float magnetizeTime = 5f;
-    public static float maxStrength = 30f;
+    public static float maxStrength = 100f;
     public static float strengthCompound = 1.1f;
 
     public List<MagnetObject> objects = new List<MagnetObject>();
 
-    public float distanceDecay = 1f;
+    public float distanceDecay = 0.01f;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -56,9 +56,10 @@ public class MagnetManager : MonoBehaviour
             Vector3 difference = closestPoint - position;
             if (otherObject.pole == objects[i].pole) difference = -difference;
 
-            float magnitude = Mathf.Max(0.001f, difference.magnitude) * distanceDecay;
-            force += difference * otherObject.strength / magnitude;
+            float magnitude = Mathf.Log(Mathf.Max(1f, difference.magnitude) + 10) * distanceDecay;
+            force += difference.normalized * otherObject.strength / magnitude;
         }
+        Debug.Log(force);
         return force;
     }
 

@@ -56,8 +56,10 @@ public class EnemyAI : MonoBehaviour
 
         // Instantiate a bullet
         var bullet = Instantiate(projectile);
-        bullet.transform.position = transform.position + transform.forward * 2 + transform.up;
+        bullet.transform.position = transform.position + transform.forward * 2 + transform.up * 3;
         bullet.transform.rotation = Quaternion.LookRotation(target.position - bullet.transform.position);
+
+        GetComponent<Actions>().Attack();
     }
 
 }

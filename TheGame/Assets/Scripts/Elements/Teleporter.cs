@@ -7,7 +7,7 @@ public class Teleporter : MonoBehaviour
     public bool isEnabled = false;
 
     private Renderer renderer;
-    private ParticleSystem particleSystem;
+    public ParticleSystem particles;
 
     private Color originalColor;
    
@@ -15,11 +15,11 @@ public class Teleporter : MonoBehaviour
     void Start()
     {
         renderer = GetComponent<Renderer>();
-        particleSystem = GetComponent<ParticleSystem>();
+        particles = GetComponent<ParticleSystem>();
 
         originalColor = renderer.material.color;
         renderer.material.color = Color.red;
-        particleSystem.Stop();
+        particles.Stop();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,7 +27,6 @@ public class Teleporter : MonoBehaviour
         if (other.CompareTag("TeleporterRange") && !isEnabled)
         {
             isEnabled = true;
-            particleSystem.Play();
             renderer.material.color = originalColor;
         }
     }
@@ -37,7 +36,6 @@ public class Teleporter : MonoBehaviour
         if (other.CompareTag("TeleporterRange"))
         {
             isEnabled = false;
-            particleSystem.Stop();
             renderer.material.color = Color.red;
         }
     }

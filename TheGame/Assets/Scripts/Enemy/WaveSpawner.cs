@@ -21,7 +21,7 @@ public class WaveSpawner : MonoBehaviour
     void Update()
     {
         GameObject[] enemiesAlive = GameObject.FindGameObjectsWithTag("Enemy");
-        if ((enemiesAlive.Length == 0 || enemiesAlive != null) && wavesSpawned < numberOfWaves)
+        if ((enemiesAlive.Length == 0 || enemiesAlive == null) && wavesSpawned < numberOfWaves)
         {
             if (enemySpawns == null)
             {

@@ -6,6 +6,12 @@ TagManager:
   tags:
   - TeleporterRange
   - Bullet
+  - MachineAndKeys
+  - Teleporter
+  - projectile
+  - FxTemporaire
+  - Enemy
+  - EnemySpawn
   layers:
   - Default
   - TransparentFX

@@ -555,9 +555,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7339472631603881830}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7339472631604018638 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400040, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
+--- !u!1 &7339472631603847270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100096, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
     type: 3}
   m_PrefabInstance: {fileID: 7339472631603881830}
   m_PrefabAsset: {fileID: 0}

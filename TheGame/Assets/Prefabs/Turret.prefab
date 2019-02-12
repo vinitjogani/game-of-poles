@@ -104,8 +104,8 @@ GameObject:
   - component: {fileID: 272774819045385638}
   - component: {fileID: 272774819045385639}
   - component: {fileID: 272774819045385636}
-  - component: {fileID: 272774819045385637}
-  - component: {fileID: 272774819045385634}
+  - component: {fileID: 842943579}
+  - component: {fileID: 842943580}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -188,7 +188,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &272774819045385637
+--- !u!114 &842943579
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,30 +197,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 272774819045385635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e01c08f87a6e54e3988fe0b86c367297, type: 3}
+  m_Script: {fileID: 11500000, guid: 98575804eb5485149bd48b174494ea18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationDegreesPerSecond: 3
+  healthbarBackground: {fileID: 2800000, guid: f20c0f4041515044b8f1fd62fc2166b4, type: 3}
+  healthbarForeground: {fileID: 2800000, guid: 77b395ba1ed96e64996ada7d790fed2b, type: 3}
+  maxHealth: 100
+--- !u!114 &842943580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272774819045385635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914e06ee3de54d74c912341c2bdba65b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationDegreesPerSecond: 40
   projectile: {fileID: 899980313321387512, guid: 7ce172a0bba4d4c7282c9e22466991c2,
     type: 3}
   maximumAttackDistance: 10
   rotationDamping: 2
-  shotInterval: 1
---- !u!114 &272774819045385634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272774819045385635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0efd61de8a8654200b4e5ef35662ca10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthbarBackground: {fileID: 2800000, guid: 96a959c3e7c5b4ee99f0340628c934e8, type: 3}
-  healthbarForeground: {fileID: 2800000, guid: 6440c5953bfb2483d846cc7a8af2eed1, type: 3}
-  maxHealth: 100
+  shotInterval: 0.5
 --- !u!1 &272774820231029530
 GameObject:
   m_ObjectHideFlags: 0

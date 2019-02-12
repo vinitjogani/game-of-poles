@@ -19,7 +19,10 @@ public class EnemyDamage : MonoBehaviour
     private void OnDestroy()
     {
         var manager = FindObjectOfType<MagnetManager>();
-        manager.objects.RemoveAll(x => x.obj == gameObject);
+        if (manager)
+        {
+            manager.objects.RemoveAll(x => x.obj == gameObject);
+        }
     }
 
     private void Update()

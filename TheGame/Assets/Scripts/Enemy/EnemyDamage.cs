@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyDamage : MonoBehaviour
 {
     public GameObject deathAudio;
-    public Texture healthbarBackground;
-    public Texture healthbarForeground;
     public float maxHealth = 100f;
+    public Collider newCollider, oldCollider;
 
     private float health;
 
@@ -30,7 +30,18 @@ public class EnemyDamage : MonoBehaviour
         if (health <= 0)
         {
             Instantiate(deathAudio).transform.position = transform.position;
-            Destroy(gameObject);
+
+            GetComponent<Actions>().Death();
+            Destroy(transform.GetComponentInChildren<Slider>().gameObject);
+
+            newCollider.enabled = true;
+            oldCollider.enabled = false;
+            enabled = false;
+
+            var ai = GetComponent<EnemyAI>();
+            if (ai) ai.enabled = false;
+
+            //Destroy(gameObject);
         }
     }
 
@@ -41,26 +52,9 @@ public class EnemyDamage : MonoBehaviour
 
         // Kinetic energy = damage
         health -= 0.5f * mass * Mathf.Pow(collision.relativeVelocity.magnitude, 2);
-    }
-
-    // Display a health bar
-    void OnGUI()
-    {
-        if (InSight())
-        {
-            var p = Camera.main.WorldToScreenPoint(transform.position);
-            p.y = Screen.height - p.y;
-
-            var dist = (transform.position - Camera.main.transform.position).magnitude;
-            var size = Mathf.Max(5f, 20f - dist);
-
-            GUI.DrawTexture(new Rect(p.x - size * 10, p.y - 100, size * 20, size),
-                            healthbarBackground, ScaleMode.StretchToFill, true);
-            // Draw Foreground
-            GUI.DrawTexture(new Rect(p.x - size * 10, p.y - 100, size * 20 * health / maxHealth, size),
-                            healthbarForeground, ScaleMode.StretchToFill, true,
-                            ((healthbarForeground.width * health) / healthbarForeground.height));
-        }
+        var slider = transform.GetComponentInChildren<Slider>();
+        if(slider) slider.value = health / maxHealth;
+        GetComponent<Actions>().Damage();
     }
 
 

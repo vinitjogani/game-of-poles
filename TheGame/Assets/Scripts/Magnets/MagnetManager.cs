@@ -59,7 +59,7 @@ public class MagnetManager : MonoBehaviour
             float magnitude = Mathf.Log(Mathf.Max(1f, difference.magnitude) + 10) * distanceDecay;
             force += difference.normalized * otherObject.strength / magnitude;
         }
-        Debug.Log(force);
+
         return force;
     }
 

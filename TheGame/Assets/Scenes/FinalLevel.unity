@@ -279,13 +279,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639108579}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.35977814, y: -0, z: -0, w: 0.9330379}
+  m_LocalPosition: {x: 0, y: 3.72, z: -4.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 42.173, y: 0, z: 0}
 --- !u!1 &910292690
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +480,16 @@ PrefabInstance:
     - target: {fileID: 272774819045385625, guid: b1e1af4c89352b04391f50e1c1a2106d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643720905104074445, guid: b1e1af4c89352b04391f50e1c1a2106d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643720905104074445, guid: b1e1af4c89352b04391f50e1c1a2106d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

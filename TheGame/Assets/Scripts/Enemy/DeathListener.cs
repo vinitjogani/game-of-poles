@@ -10,7 +10,7 @@ public class DeathListener : MonoBehaviour
     {
         int active = enemies.Count;
         foreach(var enemy in enemies) {
-            if (!enemy || !enemy.activeInHierarchy) active--;
+            if (!enemy || !enemy.activeInHierarchy || !enemy.GetComponent<EnemyDamage>().enabled) active--;
         }
         if (active == 0) SendMessage("OnDeath");
     }

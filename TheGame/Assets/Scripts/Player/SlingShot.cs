@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using Valve.VR;
 
 
 
@@ -20,7 +22,20 @@ public class SlingShot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         Init();
+    }
+
+    Tuple<Vector3,Vector3> Hands()
+    {
+        var head = InputTracking.GetLocalPosition(XRNode.Head);
+        var lhand = InputTracking.GetLocalPosition(XRNode.LeftHand);
+        var rhand = InputTracking.GetLocalPosition(XRNode.RightHand);
+
+        var lPos = lhand - head;
+        var rPos = rhand - head;
+
+        return Tuple.Create(lPos, rPos);
     }
 
     void Init()
@@ -37,8 +52,7 @@ public class SlingShot : MonoBehaviour
     {
         var down = Input.GetAxis("Axis10") != 0 || Input.GetAxis("Fire2") != 0;
 
-        Vector3 lPos = InputTracking.GetLocalPosition(XRNode.LeftHand);
-        Vector3 rPos = InputTracking.GetLocalPosition(XRNode.RightHand);
+        var (lPos, rPos) = Hands();
 
         var forward = lPos - rPos;
 

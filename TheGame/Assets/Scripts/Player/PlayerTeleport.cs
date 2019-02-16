@@ -40,7 +40,7 @@ public class PlayerTeleport : MonoBehaviour
 
                 var tPos = teleportTo.position;
                 var collider = GetComponentInChildren<BoxCollider>();
-                transform.position = new Vector3(tPos.x, tPos.y + collider.size.y * 0.75f, tPos.z) - collider.transform.localPosition;
+                transform.position = new Vector3(tPos.x, tPos.y + collider.size.y * 0.75f, tPos.z) - Camera.main.transform.localPosition;
             }
             else if (alpha <= 0f)
             {

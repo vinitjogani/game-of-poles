@@ -13,6 +13,7 @@ public class MachineKey : MonoBehaviour
         {
             alreadyCollided = true;
             BroadcastMessage("uniqueKeyCollided");
+            Destroy(NodeKey);
         }
     }
 }

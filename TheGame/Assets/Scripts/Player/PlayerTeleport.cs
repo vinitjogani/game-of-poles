@@ -12,6 +12,7 @@ public class PlayerTeleport : MonoBehaviour
 
     private Transform teleportTo;
     private Teleporter old;
+    float axis9 = 0;
 
     private void Start()
     {
@@ -40,7 +41,7 @@ public class PlayerTeleport : MonoBehaviour
 
                 var tPos = teleportTo.position;
                 var collider = GetComponentInChildren<BoxCollider>();
-                transform.position = new Vector3(tPos.x - collider.transform.localPosition.x, tPos.y + collider.size.y * 1.25f, tPos.z - collider.transform.localPosition.z);
+                transform.position = new Vector3(tPos.x - collider.transform.localPosition.x, tPos.y + Camera.main.transform.localPosition.y, tPos.z - collider.transform.localPosition.z);
             }
             else if (alpha <= 0f)
             {
@@ -59,7 +60,7 @@ public class PlayerTeleport : MonoBehaviour
             teleporter.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0, 66 / 255f, 113 / 255f));
             if (!teleporter.particles.isPlaying) teleporter.particles.Play();
 
-            if (Input.GetKey(KeyCode.T))
+            if (Input.GetKey(KeyCode.T) || (Input.GetAxis("Axis9") > 0 && axis9 == 0))
             {
                 teleportTo = teleporter.transform;
                 teleporter.GetComponent<AudioSource>().Play();
@@ -75,6 +76,7 @@ public class PlayerTeleport : MonoBehaviour
         }
 
         old = teleporter;
+        axis9 = Input.GetAxis("Axis9");
     }
 
     Teleporter GetClosestTeleporter()
@@ -95,7 +97,6 @@ public class PlayerTeleport : MonoBehaviour
             Debug.DrawRay(cam.position, teleporter.transform.position - cam.position, Color.blue);
 
             var other = hit.collider.gameObject;
-            Debug.Log(other.name + ", " + teleporter.name);
             if (other != teleporter) continue;
 
 
@@ -110,11 +111,6 @@ public class PlayerTeleport : MonoBehaviour
                 closest = teleport;
             }
         }
-
-        if(closest)
-            Debug.Log(InSight(closest.gameObject));
-        //if(closest)
-        //    Debug.DrawRay(cam.position, closest.transform.position - cam.position, Color.red);
 
         return closest;
     }

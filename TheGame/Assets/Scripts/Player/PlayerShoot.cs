@@ -44,7 +44,8 @@ public class PlayerShoot : MonoBehaviour
         var bullet = Instantiate(ballPrefab);
         bullet.transform.position = transform.position + transform.forward;
         bullet.transform.rotation = transform.rotation;
-        bullet.GetComponent<Ball>().type = type;
+        bullet.AddComponent<BulletCollide>();
+        bullet.GetComponent<BulletCollide>().type = type;
         reload = reloadTime;
     }
 }

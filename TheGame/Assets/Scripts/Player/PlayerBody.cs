@@ -8,14 +8,4 @@ public class PlayerBody : MonoBehaviour
     {
         transform.position = Camera.main.transform.position;
     }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        var body = collision.gameObject.GetComponent<Rigidbody>();
-        if (body)
-        {
-            GetComponentInParent<PlayerHealth>().TakeDamage(0.5f * body.mass * collision.relativeVelocity.sqrMagnitude);
-        }
-    }
 }

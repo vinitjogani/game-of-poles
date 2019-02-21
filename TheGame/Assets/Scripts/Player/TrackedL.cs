@@ -5,18 +5,17 @@ using UnityEngine.XR;
 
 public class TrackedL : MonoBehaviour
 {
-    public Transform offset;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float armLength = 3f;
+    public float heightAdjust = 10f;
 
     // Update is called once per frame
     void Update()
     {
-        transform.localPosition = offset.localPosition + InputTracking.GetLocalPosition(XRNode.LeftHand);
-        transform.localRotation = InputTracking.GetLocalRotation(XRNode.LeftHand);
+        Vector3 lPos = InputTracking.GetLocalPosition(XRNode.LeftHand);
+        Vector3 hPos = InputTracking.GetLocalPosition(XRNode.Head);
+        Quaternion lRot = InputTracking.GetLocalRotation(XRNode.LeftHand);
+
+        transform.localPosition = new Vector3(lPos.x - hPos.x, lPos.y, lPos.z - hPos.z) * armLength - Vector3.up * heightAdjust;
+        transform.localRotation = lRot;
     }
 }

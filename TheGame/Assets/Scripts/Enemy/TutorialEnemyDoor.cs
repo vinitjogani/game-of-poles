@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class TutorialEnemyDoor : MonoBehaviour
 {
+    private bool over = false;
+
     public void OnDeath()
     {
-        gameObject.AddComponent<Rigidbody>();
+        if (!over)
+        {
+            gameObject.AddComponent<Rigidbody>();
+            GetComponent<AudioSource>().Play();
+            over = true;
+        }
     }
 }

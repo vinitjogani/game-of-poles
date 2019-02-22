@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerDuck : MonoBehaviour
 {
+    public float duckDistance = 1.5f;
+
     private float initialY;
     private bool duck = false;
 
@@ -18,7 +20,7 @@ public class PlayerDuck : MonoBehaviour
         {
             initialY = transform.position.y;
             duck = true;
-            transform.position = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y - duckDistance, transform.position.z);
         }
         else if (duck && !Input.GetKey(KeyCode.LeftShift))
         {

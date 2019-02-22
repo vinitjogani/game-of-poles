@@ -107,7 +107,7 @@ MonoBehaviour:
   ballPrefab: {fileID: 7310455909514632390, guid: a1f6a9e64d1be734d9a1ca5e708ddb30,
     type: 3}
   offset: {fileID: 0}
-  speed: 1
+  speed: 25
   reloadTime: 1
 --- !u!1 &5143998615225041771
 GameObject:

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -420,7 +420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &178526728
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5566,7 +5566,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78042
+  m_Name: pb_Mesh19528
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6114,12 +6114,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876342550}
   m_Mesh: {fileID: 1719019077}
---- !u!1 &957667915 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7339472631603847270, guid: 447197fa0fde4a14f98f5a1253323ad2,
-    type: 3}
-  m_PrefabInstance: {fileID: 252140220}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &957667923 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7339472631604018566, guid: 447197fa0fde4a14f98f5a1253323ad2,
@@ -6332,7 +6326,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78228
+  m_Name: pb_Mesh23232
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -13535,6 +13529,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 921837a5408991d429e86efc66f8be6b, type: 2}
+    - target: {fileID: 3328379228316401664, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786475003049365818, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786475003049365819, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7943486846829671035, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f, type: 3}
@@ -14265,7 +14274,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh153212
+  m_Name: pb_Mesh20014
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -14878,7 +14887,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh153248
+  m_Name: pb_Mesh20050
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -15210,9 +15219,7 @@ GameObject:
   - component: {fileID: 1742734847}
   - component: {fileID: 1742734846}
   - component: {fileID: 1742734845}
-  - component: {fileID: 1742734844}
   - component: {fileID: 1742734843}
-  - component: {fileID: 1742734848}
   m_Layer: 0
   m_Name: EnemyDoor (1)
   m_TagString: Untagged
@@ -15243,23 +15250,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1742734841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07c6cd6299ed498479df62756cf57411, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 957667915}
---- !u!114 &1742734844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742734841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f350c4e28913b247b2923fe5e6ff709, type: 3}
+  m_Script: {fileID: 11500000, guid: 82164acd0e28449d59cfe0a8dcb00f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1742734845
@@ -15320,22 +15311,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742734841}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1742734848
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742734841}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1754473011
 GameObject:
   m_ObjectHideFlags: 0
@@ -18669,7 +18644,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh152818
+  m_Name: pb_Mesh19612
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -19095,9 +19070,7 @@ GameObject:
   - component: {fileID: 1898968406}
   - component: {fileID: 1898968405}
   - component: {fileID: 1898968404}
-  - component: {fileID: 1898968408}
   - component: {fileID: 1898968407}
-  - component: {fileID: 1898968409}
   m_Layer: 0
   m_Name: EnemyDoor
   m_TagString: Untagged
@@ -19186,41 +19159,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1898968402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07c6cd6299ed498479df62756cf57411, type: 3}
+  m_Script: {fileID: 11500000, guid: 82164acd0e28449d59cfe0a8dcb00f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 957667915}
---- !u!114 &1898968408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898968402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f350c4e28913b247b2923fe5e6ff709, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!54 &1898968409
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898968402}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1900240969
 GameObject:
   m_ObjectHideFlags: 0
@@ -19304,7 +19245,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh152970
+  m_Name: pb_Mesh19764
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -19642,7 +19583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1930257234
 Transform:
   m_ObjectHideFlags: 0
@@ -23134,7 +23075,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78506
+  m_Name: pb_Mesh20034
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2

@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     public int numberOfWaves;
-    public int numberOfEnemiesPerWave;
+    public List<int> numberOfEnemiesPerWave;
     public GameObject enemy;
 
     private GameObject[] enemySpawns;
@@ -28,7 +28,7 @@ public class WaveSpawner : MonoBehaviour
                 enemySpawns = GameObject.FindGameObjectsWithTag("EnemySpawn");
             }
 
-            for (int i=0; i < numberOfEnemiesPerWave; i++)
+            for (int i=0; i < numberOfEnemiesPerWave[wavesSpawned]; i++)
             {
                 GameObject enemySpawn = enemySpawns[i % enemySpawns.Length];
                 Instantiate(enemy);

@@ -7,26 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6488218793803415060, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6488218793803415060, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1054583560133338626, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
-        type: 3}
-      propertyPath: newCollider
-      value: 
-      objectReference: {fileID: 2097968616418111494}
-    - target: {fileID: 1054583560133338626, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
-        type: 3}
-      propertyPath: oldCollider
-      value: 
-      objectReference: {fileID: 7695351050049078554}
     - target: {fileID: 100096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_Name
       value: Stationary
@@ -83,6 +63,16 @@ PrefabInstance:
       propertyPath: leftGunBone
       value: 
       objectReference: {fileID: 7339472631604018644}
+    - target: {fileID: 1054583560133338626, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
+        type: 3}
+      propertyPath: newCollider
+      value: 
+      objectReference: {fileID: 2097968616418111494}
+    - target: {fileID: 1054583560133338626, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
+        type: 3}
+      propertyPath: oldCollider
+      value: 
+      objectReference: {fileID: 7695351050049078554}
     - target: {fileID: 13700000, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_Bones.Array.data[0]
       value: 
@@ -276,6 +266,16 @@ PrefabInstance:
       propertyPath: m_FillRect
       value: 
       objectReference: {fileID: 4598672082985359730}
+    - target: {fileID: 6488218793803415060, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6488218793803415060, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
 --- !u!65 &2097968616418111494 stripped

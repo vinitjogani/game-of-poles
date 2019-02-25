@@ -13,8 +13,9 @@ public class EnemyAI : MonoBehaviour
     public float randomRange = 0f;
     public float lookAwayTime = 5f;
     public float lookAwayRange = 20f;
-
     public float shotTime = 0f;
+
+    private bool didLookAway = false;
     private Transform target;
     private float raycastTime = 0f;
 
@@ -36,7 +37,7 @@ public class EnemyAI : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {  
+    {
         // Check if we should look at the player, if so check if we should shoot.
         float distance = Vector3.Distance(target.position, transform.position);
 
@@ -67,8 +68,9 @@ public class EnemyAI : MonoBehaviour
         else
         {
             raycastTime += Time.deltaTime;
-            if (raycastTime >= lookAwayTime)
+            if (raycastTime >= lookAwayTime && !didLookAway)
             {
+                didLookAway = true;
                 Vector3 dir = target.position - transform.position - new Vector3(L(), 0, L());
                 Quaternion rotation = Quaternion.LookRotation(dir);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDamping);
@@ -79,6 +81,8 @@ public class EnemyAI : MonoBehaviour
     // Look at the target
     void LookAtTarget()
     {
+        didLookAway = false;
+
         Vector3 dir = target.position - transform.position;
         dir.y = 0;
         Quaternion rotation = Quaternion.LookRotation(dir);
@@ -95,7 +99,7 @@ public class EnemyAI : MonoBehaviour
         // Instantiate a bullet
         var bullet = Instantiate(projectile);
         bullet.transform.position = transform.position + transform.forward * 2 + transform.up * 3;
-           
+
         // Randomized target
         var distance = (Camera.main.transform.position - bullet.transform.position).magnitude;
         Vector3 randomizedTarget = transform.forward * distance - new Vector3(R(), R(), R()) + Vector3.down;

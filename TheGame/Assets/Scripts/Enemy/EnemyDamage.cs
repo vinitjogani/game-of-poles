@@ -50,11 +50,15 @@ public class EnemyDamage : MonoBehaviour
         var body = collision.gameObject.GetComponent<Rigidbody>();
         float mass = body ? body.mass : 1;
 
+        if (collision.relativeVelocity.magnitude > 0.5f)
+        {
+            GetComponent<Actions>().Damage();
+        }
+
         // Kinetic energy = damage
         health -= 0.5f * mass * Mathf.Pow(collision.relativeVelocity.magnitude, 2);
         var slider = transform.GetComponentInChildren<Slider>();
         if(slider) slider.value = health / maxHealth;
-        GetComponent<Actions>().Damage();
     }
 
 

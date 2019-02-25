@@ -42,7 +42,6 @@ public class PlayerTeleport : MonoBehaviour
                 var tPos = teleportTo.position;
                 var offset = transform.position.y + Camera.main.transform.position.y;
                 var collider = GetComponentInChildren<BoxCollider>();
-                Debug.Log(collider.transform.lossyScale.y);
                 transform.position = new Vector3(tPos.x - collider.transform.localPosition.x, transform.position.y, tPos.z - collider.transform.localPosition.z);
             }
             else if (alpha <= 0f)

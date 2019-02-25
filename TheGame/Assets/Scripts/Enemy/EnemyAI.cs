@@ -11,15 +11,27 @@ public class EnemyAI : MonoBehaviour
     public float rotationDamping = 2f;
     public float shotInterval = 1f;
     public float randomRange = 0f;
-    private float lookAwayTime = 5f;
+    public float lookAwayTime = 5f;
+    public float lookAwayRange = 20f;
 
-    private float shotTime = 0f;
+    public float shotTime = 0f;
     private Transform target;
     private float raycastTime = 0f;
 
     private void Start()
     {
         target = Camera.main.transform;
+    }
+
+    float L()
+    {
+        return Random.Range(-lookAwayRange, lookAwayRange);
+    }
+
+
+    float R()
+    {
+        return Random.Range(-randomRange, randomRange);
     }
 
     // Update is called once per frame
@@ -37,6 +49,11 @@ public class EnemyAI : MonoBehaviour
             {
                 Shoot();
             }
+
+            if (shotTime > 1f && shotTime - Time.deltaTime < 1f && !GetComponent<Animator>().GetBool("Aiming"))
+            {
+                GetComponent<Actions>().Attack();
+            }
         }
 
         shotTime -= Time.deltaTime;
@@ -51,7 +68,7 @@ public class EnemyAI : MonoBehaviour
             raycastTime += Time.deltaTime;
             if (raycastTime >= lookAwayTime)
             {
-                Vector3 dir = target.position - transform.position - new Vector3(Random.Range(0, 10), 0, Random.Range(0, 10));
+                Vector3 dir = target.position - transform.position - new Vector3(L(), 0, L());
                 Quaternion rotation = Quaternion.LookRotation(dir);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDamping);
             }
@@ -67,6 +84,7 @@ public class EnemyAI : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDamping);
     }
 
+
     // Instantiate a bullet towards the enemy.
     void Shoot()
     {
@@ -78,8 +96,8 @@ public class EnemyAI : MonoBehaviour
         bullet.transform.position = transform.position + transform.forward * 2 + transform.up * 3;
            
         // Randomized target
-        Vector3 randomVector = new Vector3(Random.Range(0, randomRange), Random.Range(0, randomRange), Random.Range(0, randomRange));
-        Vector3 randomizedTarget = target.position - randomVector - bullet.transform.position;
+        var distance = (Camera.main.transform.position - bullet.transform.position).magnitude;
+        Vector3 randomizedTarget = transform.forward * distance - new Vector3(R(), R(), R()) + Vector3.down;
         bullet.transform.rotation = Quaternion.LookRotation(randomizedTarget);
 
         GetComponent<Actions>().Attack();

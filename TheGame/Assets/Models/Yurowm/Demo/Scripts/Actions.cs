@@ -19,8 +19,8 @@ public class Actions : MonoBehaviour {
 		}
 
 	public void Walk () {
-		animator.SetBool("Aiming", false);
-		animator.SetFloat ("Speed", 0.5f);
+        animator.SetBool("Aiming", false);
+        animator.SetFloat ("Speed", 0.5f);
 	}
 
 	public void Run () {

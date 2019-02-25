@@ -18,6 +18,9 @@ MonoBehaviour:
   maximumAttackDistance: 100
   rotationDamping: 2
   shotInterval: 10
+  randomRange: 2
+  lookAwayTime: 5
+  lookAwayRange: 20
 --- !u!1001 &7339472631603881830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25,31 +28,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1054583560133338626, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
-        type: 3}
-      propertyPath: newCollider
-      value: 
-      objectReference: {fileID: 2097968616418111494}
-    - target: {fileID: 1054583560133338626, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
-        type: 3}
-      propertyPath: oldCollider
-      value: 
-      objectReference: {fileID: 7695351050049078554}
     - target: {fileID: 100096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_Name
       value: Shooter
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -394.82208
+      value: -387.00473
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 195.22
+      value: 194.61078
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 135.6615
+      value: 136.47498
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_LocalRotation.x
@@ -83,18 +76,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: rightGunBone
       value: 
@@ -103,6 +84,21 @@ PrefabInstance:
       propertyPath: leftGunBone
       value: 
       objectReference: {fileID: 7339472631604018644}
+    - target: {fileID: 1054583560133338626, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
+        type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054583560133338626, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
+        type: 3}
+      propertyPath: newCollider
+      value: 
+      objectReference: {fileID: 2097968616418111494}
+    - target: {fileID: 1054583560133338626, guid: 398da42bc4f6f6e44852a9f96c6c4e41,
+        type: 3}
+      propertyPath: oldCollider
+      value: 
+      objectReference: {fileID: 7695351050049078554}
     - target: {fileID: 13700000, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_Bones.Array.data[0]
       value: 

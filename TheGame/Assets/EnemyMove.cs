@@ -12,6 +12,8 @@ public class EnemyMove : MonoBehaviour
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
+        nav.updateRotation = false;
+
         actions = GetComponent<Actions>();
     }
 
@@ -25,6 +27,7 @@ public class EnemyMove : MonoBehaviour
         Debug.DrawRay(head, transform.forward * 100f, Color.green);
         if (Physics.Raycast(head, transform.forward * 1000f, out hit))
         {
+            Debug.Log(hit.distance);
             if (hit.collider.CompareTag("Player") && hit.distance > 5f)
             {
                 var enemy = GetComponent<EnemyAI>();

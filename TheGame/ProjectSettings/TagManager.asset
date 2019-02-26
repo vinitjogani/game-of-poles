@@ -12,6 +12,8 @@ TagManager:
   - FxTemporaire
   - Enemy
   - EnemySpawn
+  - HealthSlider
+  - Still
   layers:
   - Default
   - TransparentFX

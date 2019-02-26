@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EnemyMove.cs" />
     <Compile Include="Assets\Models\Teleportation Pad\CustomTeleporter.cs" />
     <Compile Include="Assets\Models\Yurowm\Demo\Scripts\Actions.cs" />
     <Compile Include="Assets\Models\Yurowm\Demo\Scripts\CharacterPanel.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_SceneMeshRender.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Util.cs" />
     <Compile Include="Assets\ProCore\ProGrids\MonoBehaviour\pg_IgnoreSnap.cs" />
+    <Compile Include="Assets\Scripts\ButtonActivator.cs" />
     <Compile Include="Assets\Scripts\Elements\Arrow.cs" />
     <Compile Include="Assets\Scripts\Elements\CoverHealth.cs" />
     <Compile Include="Assets\Scripts\Elements\Destroyer.cs" />
@@ -94,10 +96,12 @@
     <Compile Include="Assets\Scripts\Enemy\TutorialEnemyDoor.cs" />
     <Compile Include="Assets\Scripts\Enemy\WaveSpawner.cs" />
     <Compile Include="Assets\Scripts\Magnets\Ball.cs" />
+    <Compile Include="Assets\Scripts\Magnets\BulletCollide.cs" />
     <Compile Include="Assets\Scripts\Magnets\MagnetManager.cs" />
     <Compile Include="Assets\Scripts\Magnets\MagnetObject.cs" />
     <Compile Include="Assets\Scripts\Player\ArrowShooter.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerBody.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCollider.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDuck.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMouseLook.cs" />

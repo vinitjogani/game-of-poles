@@ -38,32 +38,34 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check if we should look at the player, if so check if we should shoot.
-        float distance = Vector3.Distance(target.position, transform.position);
-
-        if (distance <= maximumLookDistance)
-        {
-            LookAtTarget();
-
-            //Check distance and time
-            if (distance <= maximumAttackDistance && shotTime <= 0)
-            {
-                Shoot();
-            }
-
-            if (shotTime > 1f && shotTime - Time.deltaTime < 1f && !GetComponent<Animator>().GetBool("Aiming"))
-            {
-                GetComponent<Actions>().Attack();
-            }
-        }
-
-        shotTime -= Time.deltaTime;
 
         // Raycast to player, and if fails add time to raycastTime, if raycastTime >= lookAwayTime then look away.
+        // If it doesn't fail look at player and shoot if necessary.
         RaycastHit hit;
         if (Physics.Raycast(transform.position, target.position - transform.position, out hit) && hit.collider.CompareTag("Player"))
         {
-            raycastTime = 0f;
+            raycastTime = 0f; // Reset raycastTime
+
+            // Check if we should look at the player, if so check if we should shoot.
+            float distance = Vector3.Distance(target.position, transform.position);
+
+            if (distance <= maximumLookDistance)
+            {
+                LookAtTarget();
+
+                //Check distance and time
+                if (distance <= maximumAttackDistance && shotTime <= 0)
+                {
+                    Shoot();
+                }
+
+                if (shotTime > 1f && shotTime - Time.deltaTime < 1f && !GetComponent<Animator>().GetBool("Aiming"))
+                {
+                    GetComponent<Actions>().Attack();
+                }
+            }
+
+            shotTime -= Time.deltaTime;
         }
         else
         {

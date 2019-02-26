@@ -14,6 +14,8 @@ TagManager:
   - EnemySpawn
   - HealthSlider
   - Still
+  - EnemyBullet
+  - Button
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public static class PlayerState {
     public static Vector3? respwanAt = null;
     public static Quaternion? rotation = null;
+
+    public static int level = -1;
 }
 
 public class PlayerHealth : MonoBehaviour
@@ -17,12 +19,13 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerState.respwanAt != null)
+        if (PlayerState.respwanAt != null && SceneManager.GetActiveScene().buildIndex == PlayerState.level)
         {
             transform.position = PlayerState.respwanAt.Value;
             Camera.main.transform.rotation = PlayerState.rotation.Value;
         }
 
+        PlayerState.level = SceneManager.GetActiveScene().buildIndex;
         health = maxHealth;
 
         black = new Texture2D(1, 1);

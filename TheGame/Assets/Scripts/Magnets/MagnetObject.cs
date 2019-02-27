@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class MagnetObject
 {
@@ -6,8 +7,7 @@ public class MagnetObject
     public Pole pole;
     public float time;
     public float strength;
-    public Color originalColor;
-    public Renderer renderer;
+    public List<Color> originalColor = new List<Color>();
 
     public MagnetObject(GameObject obj, Pole pole, float time, float strength = 1f)
     {
@@ -16,10 +16,9 @@ public class MagnetObject
         this.time = time;
         this.strength = strength;
 
-        renderer = obj.GetComponent<Renderer>();
-        if (renderer)
+        foreach (var renderer in obj.GetComponentsInChildren<Renderer>())
         {
-            originalColor = renderer.material.color;
+            originalColor.Add(renderer.material.color);
         }
     }
 }

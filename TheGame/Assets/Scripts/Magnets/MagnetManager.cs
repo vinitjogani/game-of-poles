@@ -68,8 +68,13 @@ public class MagnetManager : MonoBehaviour
         objects[i].time -= Time.fixedDeltaTime;
 
         Color magnetColor = colors[objects[i].pole];
-        Color lerpColor = Color.Lerp(objects[i].originalColor, magnetColor, objects[i].time / magnetizeTime);
-        if(objects[i].renderer) objects[i].renderer.material.color = lerpColor;
+
+        var renderers = objects[i].obj.GetComponentsInChildren<Renderer>();
+        for(int j = 0; j < renderers.Length; j++)
+        {
+            Color lerpColor = Color.Lerp(objects[i].originalColor[j], magnetColor, objects[i].time / magnetizeTime);
+            renderers[j].material.color = lerpColor;
+        }
 
         if (objects[i].time <= 0)
         {

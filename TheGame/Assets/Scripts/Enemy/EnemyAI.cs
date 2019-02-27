@@ -42,7 +42,11 @@ public class EnemyAI : MonoBehaviour
         // Raycast to player, and if fails add time to raycastTime, if raycastTime >= lookAwayTime then look away.
         // If it doesn't fail look at player and shoot if necessary.
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, target.position - transform.position, out hit) && hit.collider.CompareTag("Player"))
+
+        var head = transform.position + Vector3.up * 2;
+
+        Debug.DrawRay(head, target.position - head + Vector3.down * 0.2f);
+        if (Physics.Raycast(head, target.position - head + Vector3.down * 0.2f, out hit) && hit.collider.CompareTag("Player"))
         {
             raycastTime = 0f; // Reset raycastTime
 
@@ -69,6 +73,8 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
+            Debug.Log(hit.collider.tag);
+
             raycastTime += Time.deltaTime;
             if (raycastTime >= lookAwayTime && !didLookAway)
             {

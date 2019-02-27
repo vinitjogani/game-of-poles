@@ -16,6 +16,7 @@ TagManager:
   - Still
   - EnemyBullet
   - Floor
+  - Button
   layers:
   - Default
   - TransparentFX

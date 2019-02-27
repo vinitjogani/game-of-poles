@@ -30,9 +30,12 @@ public class UIInteract : MonoBehaviour
         if (minLevel != null)
             minLevel.GetComponent<Button>().Select();
 
-        if (Input.GetAxis("Axis9") > 0 && minLevel.name == "Level1")
+        if (Input.GetAxis("Axis9") > 0 || Input.GetKey(KeyCode.E))
         {
-            Application.LoadLevel("Level1");
+            if (minLevel.name == "Quit")
+                Application.Quit();
+            else
+                Application.LoadLevel(minLevel.name);
         }
     }
 }

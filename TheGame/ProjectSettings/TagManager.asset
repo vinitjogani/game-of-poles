@@ -15,6 +15,7 @@ TagManager:
   - HealthSlider
   - Still
   - EnemyBullet
+  - Floor
   - Button
   layers:
   - Default

@@ -1902,7 +1902,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6912500539048174359}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -448.03516, y: 194.61078, z: 139.20657}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
@@ -2036,10 +2036,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 899980313321387512, guid: 7ce172a0bba4d4c7282c9e22466991c2,
     type: 3}
-  maximumLookDistance: 100
-  maximumAttackDistance: 100
-  rotationDamping: 2
-  shotInterval: 10
+  maximumLookDistance: 1000
+  maximumAttackDistance: 1000
+  rotationDamping: 1
+  shotInterval: 3
   randomRange: 2
   lookAwayTime: 5
   lookAwayRange: 20
@@ -2066,17 +2066,17 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.11
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
+  avoidancePriority: 99
+  m_AngularSpeed: 0
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.94
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 3
   m_ObstacleAvoidanceType: 4
 --- !u!1 &7691620686481715219
 GameObject:

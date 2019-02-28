@@ -6,7 +6,9 @@ public class ButtonActivator : MonoBehaviour
 {
     public void OnCollisionEnter(Collision collision)
     {
-        gameObject.AddComponent<Rigidbody>();
+        var body = gameObject.AddComponent<Rigidbody>();
+        body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        body.velocity = Vector3.down * 5f;
         GetComponent<AudioSource>().Play();
     }
 }

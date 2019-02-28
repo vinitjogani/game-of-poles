@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MachineController : MonoBehaviour
 {
@@ -19,9 +20,14 @@ public class MachineController : MonoBehaviour
         rotate();
     }
 
-    void uniqueKeyCollided ()
+    public void uniqueKeyCollided()
     {
         collidedKeys += 1;
+
+        if (collidedKeys == numberOfUniqueKeys)
+        {
+            SceneManager.LoadScene("Over");
+        }
     }
 
     void rotate()

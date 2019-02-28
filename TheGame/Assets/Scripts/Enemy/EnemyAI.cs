@@ -34,7 +34,7 @@ public class EnemyAI : MonoBehaviour
     {
         return Random.Range(-randomRange, randomRange);
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -43,10 +43,11 @@ public class EnemyAI : MonoBehaviour
         // If it doesn't fail look at player and shoot if necessary.
         RaycastHit hit;
 
-        var head = transform.position + Vector3.up * 2;
+        var head = transform.position + Vector3.up * 3;
+        Ray ray = new Ray(head, target.position - head + Vector3.down * 0.2f);
 
         Debug.DrawRay(head, target.position - head + Vector3.down * 0.2f);
-        if (Physics.Raycast(head, target.position - head + Vector3.down * 0.2f, out hit) && hit.collider.CompareTag("Player"))
+        if (Physics.Raycast(ray, out hit, float.MaxValue, ~0, QueryTriggerInteraction.Ignore) && hit.collider.CompareTag("Player"))
         {
             raycastTime = 0f; // Reset raycastTime
 
@@ -74,7 +75,6 @@ public class EnemyAI : MonoBehaviour
         else
         {
             Debug.Log(hit.collider.tag);
-
             raycastTime += Time.deltaTime;
             if (raycastTime >= lookAwayTime && !didLookAway)
             {
@@ -110,7 +110,7 @@ public class EnemyAI : MonoBehaviour
 
         // Randomized target
         var distance = (Camera.main.transform.position - bullet.transform.position).magnitude;
-        Vector3 randomizedTarget = transform.forward * distance - new Vector3(R(), R(), R()) + Vector3.down;
+        Vector3 randomizedTarget = transform.forward * distance - new Vector3(R(), R(), R()) + Vector3.down * 1.5f;
         bullet.transform.rotation = Quaternion.LookRotation(randomizedTarget);
 
         GetComponent<Actions>().Attack();

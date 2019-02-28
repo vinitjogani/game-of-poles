@@ -56,6 +56,6 @@ public class PlayerHealth : MonoBehaviour
 
     void RestartLevel()
     {
-        SceneManager.LoadScene("FinalTutorial");
+        SceneManager.LoadScene(PlayerState.level);
     }
 }

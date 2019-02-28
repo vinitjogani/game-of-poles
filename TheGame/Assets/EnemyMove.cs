@@ -22,12 +22,14 @@ public class EnemyMove : MonoBehaviour
     {
         RaycastHit hit;
 
-        var head = transform.position + Vector3.up * 2;
+        var head = transform.position + Vector3.up * 3;
+        var distance = (Camera.main.transform.position - transform.position).magnitude;
+        Debug.DrawRay(head, transform.forward * distance + Vector3.down * 2, Color.green);
+        Ray ray = new Ray(head, transform.forward * distance + Vector3.down * 2);
 
-        Debug.DrawRay(head, transform.forward * 100f, Color.green);
-        if (Physics.Raycast(head, transform.forward * 1000f, out hit))
+        if (Physics.Raycast(ray, out hit, float.MaxValue, ~0, QueryTriggerInteraction.Ignore))
         {
-            Debug.Log(hit.distance);
+            Debug.Log(hit.distance + ", " + hit.collider.tag);
             if (hit.collider.CompareTag("Player") && hit.distance > 5f)
             {
                 var enemy = GetComponent<EnemyAI>();

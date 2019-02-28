@@ -12,7 +12,7 @@ public class MachineKey : MonoBehaviour
         if (collision.gameObject == NodeKey && !alreadyCollided)
         {
             alreadyCollided = true;
-            BroadcastMessage("uniqueKeyCollided");
+            GetComponentInParent<MachineController>().uniqueKeyCollided();
             Destroy(NodeKey);
         }
     }

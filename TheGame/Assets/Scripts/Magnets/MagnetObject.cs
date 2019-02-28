@@ -18,7 +18,11 @@ public class MagnetObject
 
         foreach (var renderer in obj.GetComponentsInChildren<Renderer>())
         {
-            originalColor.Add(renderer.material.color);
+            try
+            {
+                originalColor.Add(renderer.material.color);
+            }
+            catch { }
         }
     }
 }

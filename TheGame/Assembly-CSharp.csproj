@@ -60,7 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EnemyMove.cs" />
     <Compile Include="Assets\Models\Teleportation Pad\CustomTeleporter.cs" />
     <Compile Include="Assets\Models\Yurowm\Demo\Scripts\Actions.cs" />
     <Compile Include="Assets\Models\Yurowm\Demo\Scripts\CharacterPanel.cs" />
@@ -79,8 +78,8 @@
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_SceneMeshRender.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Util.cs" />
     <Compile Include="Assets\ProCore\ProGrids\MonoBehaviour\pg_IgnoreSnap.cs" />
-    <Compile Include="Assets\Scripts\ButtonActivator.cs" />
     <Compile Include="Assets\Scripts\Elements\Arrow.cs" />
+    <Compile Include="Assets\Scripts\Elements\ButtonActivator.cs" />
     <Compile Include="Assets\Scripts\Elements\CoverHealth.cs" />
     <Compile Include="Assets\Scripts\Elements\Destroyer.cs" />
     <Compile Include="Assets\Scripts\Elements\DuckHits.cs" />
@@ -92,6 +91,7 @@
     <Compile Include="Assets\Scripts\Enemy\DeathListener.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyDamage.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\Enemy\TurretController.cs" />
     <Compile Include="Assets\Scripts\Enemy\TutorialEnemyDoor.cs" />
     <Compile Include="Assets\Scripts\Enemy\WaveSpawner.cs" />
@@ -99,7 +99,6 @@
     <Compile Include="Assets\Scripts\Magnets\BulletCollide.cs" />
     <Compile Include="Assets\Scripts\Magnets\MagnetManager.cs" />
     <Compile Include="Assets\Scripts\Magnets\MagnetObject.cs" />
-    <Compile Include="Assets\Scripts\PauseGame.cs" />
     <Compile Include="Assets\Scripts\Player\ArrowShooter.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerBody.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCollider.cs" />
@@ -110,7 +109,8 @@
     <Compile Include="Assets\Scripts\Player\PlayerTeleport.cs" />
     <Compile Include="Assets\Scripts\Player\SlingShot.cs" />
     <Compile Include="Assets\Scripts\Player\TrackedL.cs" />
-    <Compile Include="Assets\UIInteract.cs" />
+    <Compile Include="Assets\Scripts\UI\PauseGame.cs" />
+    <Compile Include="Assets\Scripts\UI\UIInteract.cs" />
     <None Include="Assets\ProCore\ProGrids\Shader\pg_GridShader.shader" />
     <None Include="Assets\ProCore\ProBuilder\Shader\pb_TransparentOverlay.shader" />
     <None Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\README.txt" />

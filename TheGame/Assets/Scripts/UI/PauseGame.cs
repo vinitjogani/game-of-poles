@@ -32,7 +32,7 @@ public class PauseGame : MonoBehaviour
     private void Pause()
     {
         Time.timeScale = 0;
-        pausePanel.transform.position = player.transform.position - new Vector3(0f, 0f, 1f);
+        pausePanel.transform.localPosition = Camera.main.transform.forward;
         pausePanel.SetActive(true);
         //Disable scripts that still work while timescale is set to 0 and switch off music
     }

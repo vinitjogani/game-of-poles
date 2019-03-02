@@ -5,17 +5,11 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     public GameObject ballPrefab;
-    public float reloadTime = 0.5f;
+    public float reloadTime = 0f;
 
     private float reload = 0;
     private GameObject oldObj;
     private Color oldColor;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -47,5 +41,9 @@ public class PlayerShoot : MonoBehaviour
         bullet.AddComponent<BulletCollide>();
         bullet.GetComponent<BulletCollide>().type = type;
         reload = reloadTime;
+
+        // Play shooting sound
+        AudioSource laudio = gameObject.AddComponent<AudioSource>();
+        laudio.PlayOneShot((AudioClip)Resources.Load("PlayerBulletShoot"));
     }
 }

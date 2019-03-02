@@ -32,6 +32,9 @@ public class BulletCollide : MonoBehaviour
             {
                 manager.objects.Add(magnetObject);
             }
+
+            AudioSource laudio = gameObject.AddComponent<AudioSource>();
+            laudio.PlayOneShot((AudioClip)Resources.Load("MagneticON"));
         }
     }
 }

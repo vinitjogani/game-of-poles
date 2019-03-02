@@ -114,6 +114,10 @@ public class EnemyAI : MonoBehaviour
         bullet.transform.rotation = Quaternion.LookRotation(randomizedTarget);
 
         GetComponent<Actions>().Attack();
+
+        // Play shooting sound
+        AudioSource laudio = gameObject.AddComponent<AudioSource>();
+        laudio.PlayOneShot((AudioClip)Resources.Load("EnemyBulletShoot"));
     }
 
 }

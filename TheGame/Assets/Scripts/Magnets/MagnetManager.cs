@@ -12,7 +12,7 @@ public class MagnetManager : MonoBehaviour
     };
 
     public static float magnetStrength = 50f;
-    public static float magnetizeTime = 5f;
+    public static float magnetizeTime = 8f;
     public static float maxStrength = 100f;
     public static float strengthCompound = 1.1f;
 

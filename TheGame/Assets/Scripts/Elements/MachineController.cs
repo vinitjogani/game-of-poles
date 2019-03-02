@@ -14,6 +14,10 @@ public class MachineController : MonoBehaviour
     {
         if (collidedKeys == numberOfUniqueKeys)
         {
+            // Play machine sound
+            AudioSource laudio = gameObject.AddComponent<AudioSource>();
+            laudio.PlayOneShot((AudioClip)Resources.Load("Machine 02"));
+
             Destroy(transform.parent);
         }
 

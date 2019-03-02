@@ -11,9 +11,14 @@ public class MachineKey : MonoBehaviour
     {
         if (collision.gameObject == NodeKey && !alreadyCollided)
         {
+            // Play key destroyed sound
+            AudioSource laudio = gameObject.AddComponent<AudioSource>();
+            laudio.PlayOneShot((AudioClip)Resources.Load("KeyUnlocked"));
+
             alreadyCollided = true;
             GetComponentInParent<MachineController>().uniqueKeyCollided();
             Destroy(NodeKey);
+
         }
     }
 }

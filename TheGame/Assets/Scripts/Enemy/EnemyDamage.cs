@@ -41,7 +41,6 @@ public class EnemyDamage : MonoBehaviour
             var ai = GetComponent<EnemyAI>();
             if (ai) ai.enabled = false;
 
-            //Destroy(gameObject);
         }
     }
 
@@ -61,6 +60,10 @@ public class EnemyDamage : MonoBehaviour
             health -= 0.5f * mass * Mathf.Pow(collision.relativeVelocity.magnitude, 2);
             var slider = transform.GetComponentInChildren<Slider>();
             if (slider) slider.value = health / maxHealth;
+
+            // Play damage sound
+            AudioSource laudio = gameObject.AddComponent<AudioSource>();
+            laudio.PlayOneShot((AudioClip)Resources.Load("Explosion"));
         }
     }
 

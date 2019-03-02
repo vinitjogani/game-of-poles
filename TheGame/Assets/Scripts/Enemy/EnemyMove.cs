@@ -38,6 +38,10 @@ public class EnemyMove : MonoBehaviour
                     actions.Walk();
                     nav.isStopped = false;
                     nav.destination = Camera.main.transform.position;
+
+                    // Play damage sound
+                    AudioSource laudio = gameObject.AddComponent<AudioSource>();
+                    laudio.PlayOneShot((AudioClip)Resources.Load("EnemyWalk"));
                 }
                 else
                 {

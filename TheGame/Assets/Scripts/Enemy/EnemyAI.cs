@@ -75,7 +75,6 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            Debug.Log(hit.collider.tag);
             raycastTime += Time.deltaTime;
             if (raycastTime >= lookAwayTime && !didLookAway)
             {

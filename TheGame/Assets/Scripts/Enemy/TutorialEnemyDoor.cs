@@ -10,7 +10,8 @@ public class TutorialEnemyDoor : MonoBehaviour
     {
         if (!over)
         {
-            gameObject.AddComponent<Rigidbody>();
+            var body = gameObject.AddComponent<Rigidbody>();
+            body.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
             GetComponent<AudioSource>().Play();
             over = true;
         }

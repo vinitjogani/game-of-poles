@@ -14,6 +14,7 @@ public class EnemyAI : MonoBehaviour
     public float lookAwayTime = 5f;
     public float lookAwayRange = 20f;
     public float shotTime = 1f; // shotInterval
+    public bool bypassRaycast;
 
     private bool didLookAway = false;
     private Transform target;
@@ -47,7 +48,7 @@ public class EnemyAI : MonoBehaviour
         Ray ray = new Ray(head, target.position - head + Vector3.down * 0.2f);
 
         Debug.DrawRay(head, target.position - head + Vector3.down * 0.2f);
-        if (Physics.Raycast(ray, out hit, float.MaxValue, ~0, QueryTriggerInteraction.Ignore) && hit.collider.CompareTag("Player"))
+        if ((Physics.Raycast(ray, out hit, float.MaxValue, ~0, QueryTriggerInteraction.Ignore) && hit.collider.CompareTag("Player")) || bypassRaycast)
         {
             raycastTime = 0f; // Reset raycastTime
 
@@ -108,9 +109,11 @@ public class EnemyAI : MonoBehaviour
         var bullet = Instantiate(projectile);
         bullet.transform.position = transform.position + transform.forward * 2 + transform.up * 3;
 
+        var yOffset = (bullet.transform.position - Camera.main.transform.position).y;
+
         // Randomized target
         var distance = (Camera.main.transform.position - bullet.transform.position).magnitude;
-        Vector3 randomizedTarget = transform.forward * distance - new Vector3(R(), R(), R()) + Vector3.down * 1.5f;
+        Vector3 randomizedTarget = transform.forward * distance - new Vector3(R(), yOffset, R()) + Vector3.down * .5f;
         bullet.transform.rotation = Quaternion.LookRotation(randomizedTarget);
 
         GetComponent<Actions>().Attack();

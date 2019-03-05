@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     public float randomRange = 0f;
     public float lookAwayTime = 5f;
     public float lookAwayRange = 20f;
-    public float shotTime = 0f;
+    public float shotTime = 1f; // shotInterval
 
     private bool didLookAway = false;
     private Transform target;

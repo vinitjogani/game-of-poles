@@ -12,7 +12,7 @@ public class TurretController : MonoBehaviour
     public float shotInterval = 1f;
     public float randomRange = 0f;
 
-    private float shotTime = 0f;
+    private float shotTime = 2f;
     private Transform target;
 
     // Update is called once per frame

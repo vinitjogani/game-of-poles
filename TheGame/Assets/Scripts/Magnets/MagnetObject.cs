@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class MagnetObject
+public class MagnetObject: MonoBehaviour
 {
     public readonly GameObject obj;
     public Pole pole;
@@ -24,5 +24,13 @@ public class MagnetObject
             }
             catch { }
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        AudioSource laudio = gameObject.AddComponent<AudioSource>();
+        laudio.volume = 1 - 1/collision.relativeVelocity.sqrMagnitude;
+        int rand = Random.Range(0, 3);
+        laudio.PlayOneShot((AudioClip)Resources.Load("collision{rand}"));
     }
 }

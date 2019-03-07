@@ -39,10 +39,15 @@ public class PlayerTeleport : MonoBehaviour
             {
                 direction = -direction;
 
-                var tPos = teleportTo.position;
-                var offset = transform.position.y + Camera.main.transform.position.y;
-                var collider = GetComponentInChildren<BoxCollider>();
-                transform.position = new Vector3(tPos.x - collider.transform.localPosition.x, transform.position.y, tPos.z - collider.transform.localPosition.z);
+                transform.SetParent(teleportTo);
+                transform.localPosition = Vector3.forward * (transform.position.y - teleportTo.position.y);
+                transform.SetParent(null);
+
+                //var tPos = teleportTo;
+                //var offset = transform.position.y + Camera.main.transform.position.y;
+                //var collider = GetComponentInChildren<BoxCollider>();
+                //transform.position = new Vector3(tPos.x, transform.position.y, tPos.y);
+                //transform.position = new Vector3(tPos.x - collider.transform.localPosition.x, transform.position.y, tPos.z - collider.transform.localPosition.z);
             }
             else if (alpha <= 0f)
             {
@@ -58,10 +63,11 @@ public class PlayerTeleport : MonoBehaviour
 
         if (teleporter)
         {
+
             teleporter.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0, 66 / 255f, 113 / 255f));
             if (!teleporter.particles.isPlaying) teleporter.particles.Play();
 
-            if (Input.GetKey(KeyCode.T) || (Input.GetAxis("Axis9") > 0 && axis9 == 0))
+            if ((Input.GetKey(KeyCode.T) || Input.GetAxis("Axis9") > 0) && axis9 == 0)
             {
                 teleportTo = teleporter.transform;
                 teleporter.GetComponent<AudioSource>().Play();
@@ -77,7 +83,7 @@ public class PlayerTeleport : MonoBehaviour
         }
 
         old = teleporter;
-        axis9 = Input.GetAxis("Axis9");
+        axis9 = Input.GetAxis("Axis9") + (Input.GetKey(KeyCode.T) ? 1:0);
     }
 
     Teleporter GetClosestTeleporter()
@@ -93,9 +99,10 @@ public class PlayerTeleport : MonoBehaviour
             var teleport = teleporter.GetComponent<Teleporter>();
             if (!teleport || !teleport.isEnabled || !InSight(teleporter)) continue;
 
+            Debug.DrawRay(cam.position, teleporter.transform.position - cam.position, Color.red);
+
             RaycastHit hit;
             Physics.Raycast(cam.position, teleporter.transform.position - cam.position, out hit);
-            Debug.DrawRay(cam.position, teleporter.transform.position - cam.position, Color.blue);
 
             var other = hit.collider.gameObject;
             if (other != teleporter) continue;

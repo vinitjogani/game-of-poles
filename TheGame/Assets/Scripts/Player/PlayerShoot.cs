@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    public GameObject ballPrefab;
+    public GameObject ballPrefab, projectilePrefab;
     public float reloadTime = 0f;
 
+    private float projectileTime = 0.1f;
     private float reload = 0;
     private GameObject oldObj;
     private Color oldColor;
@@ -31,6 +32,24 @@ public class PlayerShoot : MonoBehaviour
         {
             reload -= Time.deltaTime;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        projectileTime -= Time.fixedDeltaTime;
+        if (projectileTime <= 0f)
+        {
+            Simulate();
+            projectileTime = 0.1f;
+        }
+    }
+
+    void Simulate()
+    {
+        var bullet = Instantiate(projectilePrefab);
+        bullet.transform.position = transform.position;
+        bullet.transform.rotation = transform.rotation;
+        bullet.transform.SetParent(transform);
     }
 
     void Fire(Pole type)

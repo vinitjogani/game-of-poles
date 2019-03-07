@@ -13,6 +13,11 @@ public class Projectile : MonoBehaviour
     private int flag = 0;
     private Collider collider = new Collider();
 
+    private void Start()
+    {
+        lr = gameObject.AddComponent<LineRenderer>();
+    }
+
     // Start is called before the first frame update
     void FixedUpdate()
     {
@@ -22,7 +27,6 @@ public class Projectile : MonoBehaviour
         radian = (newangle * (22 / 7)) / 180;
         height = (initialVelocity * initialVelocity * Mathf.Sin(radian) * Mathf.Sin(radian)) / (2 * gravity);
         distance = (initialVelocity * initialVelocity * Mathf.Sin(2 * radian)) / gravity;
-        lr = GetComponent<LineRenderer>();
         lr.material = new Material(Shader.Find("Sprites/Default"));
 
         // Set some positions

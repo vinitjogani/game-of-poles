@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class MagnetObject: MonoBehaviour
+public class MagnetObject
 {
     public readonly GameObject obj;
     public Pole pole;
@@ -16,21 +16,12 @@ public class MagnetObject: MonoBehaviour
         this.time = time;
         this.strength = strength;
 
+        obj.AddComponent<CollisionSound>();
+
         foreach (var renderer in obj.GetComponentsInChildren<Renderer>())
         {
-            try
-            {
-                originalColor.Add(renderer.material.color);
-            }
+            try { originalColor.Add(renderer.material.color); }
             catch { }
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        AudioSource laudio = gameObject.AddComponent<AudioSource>();
-        laudio.volume = 1 - 1/collision.relativeVelocity.sqrMagnitude;
-        int rand = Random.Range(0, 3);
-        laudio.PlayOneShot((AudioClip)Resources.Load("collision{rand}"));
     }
 }

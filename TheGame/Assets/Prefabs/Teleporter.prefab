@@ -106,20 +106,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.7264123, y: 4.7264137, z: 0.30055705}
   m_Center: {x: 0, y: 0, z: 0.15286054}
---- !u!114 &1716540473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5958278807326062402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 507c7319f61bb094eb3047ae3f1b4fdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isEnabled: 0
-  particles: {fileID: 0}
 --- !u!1001 &5958278807326159330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129,19 +115,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 60ea8a8ee79fc564294d0a35f8b0ae4a, type: 3}
       propertyPath: m_Name
-      value: Teleporter (5)
+      value: Teleporter (1)
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60ea8a8ee79fc564294d0a35f8b0ae4a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -464.65457
+      value: -14.978226
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60ea8a8ee79fc564294d0a35f8b0ae4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 194.61078
+      value: -8.875107
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60ea8a8ee79fc564294d0a35f8b0ae4a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 134.54187
+      value: -9.436593
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60ea8a8ee79fc564294d0a35f8b0ae4a, type: 3}
       propertyPath: m_LocalRotation.x
@@ -183,9 +169,7 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1194534957, guid: 60ea8a8ee79fc564294d0a35f8b0ae4a, type: 3}
-    - {fileID: 13600000, guid: 60ea8a8ee79fc564294d0a35f8b0ae4a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60ea8a8ee79fc564294d0a35f8b0ae4a, type: 3}
 --- !u!1 &5958278807326062402 stripped
 GameObject:

@@ -20,19 +20,19 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
+        //RaycastHit hit;
 
         var head = transform.position + Vector3.up * 3;
         var distance = (Camera.main.transform.position - transform.position).magnitude;
-        Debug.DrawRay(head, transform.forward * distance + Vector3.down * 2, Color.green);
-        Ray ray = new Ray(head, transform.forward * distance + Vector3.down * 2);
+        //Debug.DrawRay(head, transform.forward * distance + Vector3.down * 2, Color.green);
+        //Ray ray = new Ray(head, transform.forward * distance + Vector3.down * 2);
 
-        if (Physics.Raycast(ray, out hit, float.MaxValue, ~0, QueryTriggerInteraction.Ignore))
-        {
-            Debug.Log(hit.distance + ", " + hit.collider.tag);
-            if (hit.collider.CompareTag("Player") && hit.distance > 5f)
+        //if (Physics.Raycast(ray, out hit, float.MaxValue, ~0, QueryTriggerInteraction.Ignore))
+        //{
+            if (distance > 5f && distance < 30f)
             {
                 var enemy = GetComponent<EnemyAI>();
+                Debug.Log(enemy.shotTime + ", " + enemy.shotInterval);
                 if (enemy.shotTime > 1f && enemy.shotTime < enemy.shotInterval)
                 {
                     actions.Walk();
@@ -53,6 +53,6 @@ public class EnemyMove : MonoBehaviour
                 nav.isStopped = true;
                 actions.Aiming();
             }
-        }
+        //}
     }
 }

@@ -11,13 +11,14 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        body = GetComponent<Rigidbody>();   
+        body = GetComponent<Rigidbody>();
+        body.velocity = transform.forward * 25f;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        body.AddForce(transform.forward * speed);
-    }
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    body.AddForce(transform.forward * speed);
+    //}
 
 }

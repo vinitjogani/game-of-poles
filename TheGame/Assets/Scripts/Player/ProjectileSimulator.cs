@@ -32,7 +32,7 @@ public class ProjectileSimulator : MonoBehaviour
             light.enabled = true;
             light.type = LightType.Point;
             light.range = 3f;
-            light.intensity = 3f;
+            light.intensity = 8f;
             light.color = Color.yellow;
         }
     }

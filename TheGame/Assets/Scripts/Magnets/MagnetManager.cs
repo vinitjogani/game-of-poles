@@ -18,7 +18,7 @@ public class MagnetManager : MonoBehaviour
 
     public List<MagnetObject> objects = new List<MagnetObject>();
 
-    public float distanceDecay = 0.01f;
+    public float distanceDecay = 1f;
 
     // Update is called once per frame
     void FixedUpdate()

@@ -62,7 +62,8 @@ public class PlayerShoot : MonoBehaviour
         reload = reloadTime;
 
         // Play shooting sound
-        AudioSource laudio = gameObject.AddComponent<AudioSource>();
+        AudioSource temp = GetComponent<AudioSource>();
+        AudioSource laudio = temp ? temp : gameObject.AddComponent<AudioSource>();
         laudio.PlayOneShot((AudioClip)Resources.Load("PlayerBulletShoot"));
     }
 }

@@ -7,6 +7,7 @@ public class EnemyMove : MonoBehaviour
 {
     private NavMeshAgent nav;
     private Actions actions;
+    private float timePassed = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,29 +30,36 @@ public class EnemyMove : MonoBehaviour
 
         //if (Physics.Raycast(ray, out hit, float.MaxValue, ~0, QueryTriggerInteraction.Ignore))
         //{
-            if (distance > 5f && distance < 30f)
+        if (distance > 5f && distance < 30f)
+        {
+            var enemy = GetComponent<EnemyAI>();
+            if (enemy.shotTime > 1f && enemy.shotTime < enemy.shotInterval)
             {
-                var enemy = GetComponent<EnemyAI>();
-                if (enemy.shotTime > 1f && enemy.shotTime < enemy.shotInterval)
-                {
-                    actions.Walk();
-                    nav.isStopped = false;
-                    nav.destination = Camera.main.transform.position;
+                actions.Walk();
+                nav.isStopped = false;
+                nav.destination = Camera.main.transform.position;
 
-                    // Play damage sound
-                    //AudioSource laudio = gameObject.AddComponent<AudioSource>();
-                    //laudio.PlayOneShot((AudioClip)Resources.Load("EnemyWalk"));
-                }
-                else
+                // Play walk sound
+                AudioSource temp = GetComponent<AudioSource>();
+                AudioSource laudio = temp ? temp : gameObject.AddComponent<AudioSource>();
+                AudioClip audioClip = (AudioClip)Resources.Load("EnemyWalk");
+                if (timePassed <= audioClip.length)
                 {
-                    nav.isStopped = true;
+                    laudio.PlayOneShot(audioClip);
+                    timePassed = 0f;
                 }
             }
             else
             {
                 nav.isStopped = true;
-                actions.Aiming();
             }
+        }
+        else
+        {
+            nav.isStopped = true;
+            actions.Aiming();
+        }
         //}
+        timePassed += Time.deltaTime;
     }
 }

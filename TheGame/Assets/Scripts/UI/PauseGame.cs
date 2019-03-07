@@ -13,7 +13,7 @@ public class PauseGame : MonoBehaviour
     }
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.P)) || (Input.GetAxis("Axis9") > 0 && Input.GetAxis("Axis10") > 0 ))
+        if ((Input.GetKeyDown(KeyCode.P)) || (Input.GetButtonDown("2")))
         {
             if (paused == false)
             {

@@ -5,11 +5,6 @@ using UnityEngine.UI;
 
 public class UIInteract : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -33,7 +28,12 @@ public class UIInteract : MonoBehaviour
         if (Input.GetAxis("Axis9") > 0 || Input.GetKey(KeyCode.E))
         {
             if (minLevel.name == "Quit")
+            {
+                #if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;
+                #endif
                 Application.Quit();
+            }
             else
                 Application.LoadLevel(minLevel.name);
         }

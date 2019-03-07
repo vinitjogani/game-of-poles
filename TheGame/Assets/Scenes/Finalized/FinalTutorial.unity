@@ -21279,6 +21279,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022307675}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1027499106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7058481168561407478, guid: 81d17557cee694691b4c42cdf5198cfa,
+    type: 3}
+  m_PrefabInstance: {fileID: 7058481169236161007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1027499107
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027499106}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.6062317, y: 0.77086663, z: 4.2923326}
+  m_Center: {x: 0.32807302, y: 0.36557376, z: -0.63264275}
 --- !u!1001 &1029609722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27888,7 +27907,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f96ede113a58cb14aa49d987b9eabbb3, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -30710,56 +30729,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3328379228316401664, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786475003049365818, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786475003049365819, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786475003049365819, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
-        type: 3}
-      propertyPath: minimumY
-      value: -70
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786475003049365819, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
-        type: 3}
-      propertyPath: maximumY
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786475002493144225, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001406793288078997, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5143998617011054851, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786475002493144226, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 5047044967965685186, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
-        type: 3}
-      propertyPath: pausePanel
-      value: 
-      objectReference: {fileID: 1477068369}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f, type: 3}
 --- !u!4 &1324987915 stripped
@@ -34225,12 +34194,6 @@ Transform:
   m_Father: {fileID: 881067641}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1477068369 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1594354356744552590, guid: 2c1a96de9eea9dc4fa03db7a5b75b99f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1324987914}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1477189846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47384,7 +47347,7 @@ PrefabInstance:
     - target: {fileID: 8852880135335706508, guid: a50b989943426462e9edc41bfc1c9aff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.36
+      value: -8.49
       objectReference: {fileID: 0}
     - target: {fileID: 8852880135335706508, guid: a50b989943426462e9edc41bfc1c9aff,
         type: 3}
@@ -47439,6 +47402,11 @@ PrefabInstance:
     - target: {fileID: 2364802163985062776, guid: a50b989943426462e9edc41bfc1c9aff,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 152506367406141964, guid: a50b989943426462e9edc41bfc1c9aff,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5131963212354284237, guid: a50b989943426462e9edc41bfc1c9aff,

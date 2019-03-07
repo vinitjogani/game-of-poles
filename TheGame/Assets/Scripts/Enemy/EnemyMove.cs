@@ -32,7 +32,6 @@ public class EnemyMove : MonoBehaviour
             if (distance > 5f && distance < 30f)
             {
                 var enemy = GetComponent<EnemyAI>();
-                Debug.Log(enemy.shotTime + ", " + enemy.shotInterval);
                 if (enemy.shotTime > 1f && enemy.shotTime < enemy.shotInterval)
                 {
                     actions.Walk();
@@ -40,8 +39,8 @@ public class EnemyMove : MonoBehaviour
                     nav.destination = Camera.main.transform.position;
 
                     // Play damage sound
-                    AudioSource laudio = gameObject.AddComponent<AudioSource>();
-                    laudio.PlayOneShot((AudioClip)Resources.Load("EnemyWalk"));
+                    //AudioSource laudio = gameObject.AddComponent<AudioSource>();
+                    //laudio.PlayOneShot((AudioClip)Resources.Load("EnemyWalk"));
                 }
                 else
                 {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour
 {
     public bool isEnabled = false;
+    public float range = 50f;
 
     private Renderer renderer;
     public ParticleSystem particles;
@@ -22,18 +23,16 @@ public class Teleporter : MonoBehaviour
         particles.Stop();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (other.CompareTag("TeleporterRange") && !isEnabled)
+        var distance = (Camera.main.transform.position - transform.position).magnitude;
+
+        if (distance < range)
         {
             isEnabled = true;
             renderer.material.color = originalColor;
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("TeleporterRange"))
+        else
         {
             isEnabled = false;
             renderer.material.color = Color.red;

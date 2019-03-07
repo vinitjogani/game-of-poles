@@ -9,26 +9,33 @@ public class Tutorial : MonoBehaviour
     public GameObject attractplane;
     public int objective;
 
-    void OnTriggerEnter(Collider collider)
-    {
-        if (collider.name == "Ball(Clone)" && objective == 1)
+	private void Update()
+	{
+        var distance = (Camera.main.transform.position - transform.position).magnitude;
+        if (distance < 10 && objective == 0)
         {
-            Debug.Log("Ball hit");
-            Destroy(shootplane);
-            Destroy(collider);
+            Destroy(moveplane);
+            Destroy(GetComponent<Collider>());
         }
-        else if (collider.name == "Ball(Clone)" && objective == 0)
-        {
             
-            Destroy(moveplane);
-            Destroy(collider);
-        }
-        else if (collider.name == "Player" && objective == 0) {
-            Destroy(moveplane);
-        }
-        else if (collider.name == "AttractCube" && objective == 3)
+	}
+
+	private void OnCollisionEnter(Collision collision)
+	{
+        
+        if (collision.gameObject.name == "ObjectiveCube" && objective == 2)
         {
             Destroy(attractplane);
+        }
+	}
+
+	void OnTriggerEnter(Collider collider)
+    {
+     
+        if (collider.name == "Ball(Clone)" && objective == 1)
+        {
+            Destroy(shootplane);
+            Destroy(collider);
         }
     }
 }

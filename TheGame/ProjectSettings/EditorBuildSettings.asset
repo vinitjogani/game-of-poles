@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Finalized/Tutorial.unity
     guid: e0de8425f7c8f1d4bb82213147bd8e30
+  - enabled: 1
+    path: Assets/Scenes/Finalized/Over.unity
+    guid: 1821db0d7102dae4eb57c2909186e127
   m_configObjects: {}

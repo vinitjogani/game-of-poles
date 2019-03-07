@@ -66,7 +66,8 @@ public class TurretController : MonoBehaviour
         r_bullet.GetComponent<Rigidbody>().AddForce(r_bullet.transform.forward * 20);
 
         // Play shooting sound
-        AudioSource laudio = gameObject.AddComponent<AudioSource>();
+        AudioSource temp = GetComponent<AudioSource>();
+        AudioSource laudio = temp ? temp : gameObject.AddComponent<AudioSource>();
         laudio.PlayOneShot((AudioClip)Resources.Load("EnemyBulletShoot"));
     }
 

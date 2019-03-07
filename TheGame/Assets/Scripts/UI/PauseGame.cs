@@ -13,7 +13,7 @@ public class PauseGame : MonoBehaviour
     }
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.P)) || (Input.GetButtonDown("2")))
+        if ((Input.GetKeyDown(KeyCode.P)) || (Input.GetButtonDown("0")))
         {
             if (paused == false)
             {
@@ -26,7 +26,7 @@ public class PauseGame : MonoBehaviour
                 Continue();
             }
         }
-        if ((Input.GetKeyDown(KeyCode.M)) || (Input.GetButtonDown("1")))
+        if ((Input.GetKeyDown(KeyCode.M)) || (Input.GetButtonDown("2")))
             Application.LoadLevel("MainMenu");
     }
     private void Pause()

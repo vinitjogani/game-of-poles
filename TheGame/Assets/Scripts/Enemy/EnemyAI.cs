@@ -15,6 +15,7 @@ public class EnemyAI : MonoBehaviour
     public float lookAwayRange = 20f;
     public float shotTime = 1f; // shotInterval
     public bool bypassRaycast;
+    public int distanceRandFactor = 5;
 
     private bool didLookAway = false;
     private Transform target;
@@ -33,7 +34,8 @@ public class EnemyAI : MonoBehaviour
 
     float R()
     {
-        return Random.Range(-randomRange, randomRange);
+        float distance = Vector3.Distance(target.position, transform.position);
+        return Random.Range(Mathf.Min(-randomRange + distance/ distanceRandFactor, 0), Mathf.Max(0, randomRange - distance/ distanceRandFactor));
     }
     
     // Update is called once per frame

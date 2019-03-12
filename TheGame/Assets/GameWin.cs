@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameWin : MonoBehaviour
 {
+    private float gameOver = 2f;
     void Update()
     {
-        if (GetComponent<EnemyAI>().enabled == false)
-            SceneManager.LoadScene("Over");
+        if (gameOver < 2f) gameOver -= Time.deltaTime;
+        if (gameOver < 0f) SceneManager.LoadScene("Over");
+
+        if (GetComponent<EnemyAI>().enabled == false) gameOver -= Time.deltaTime;
     }
 }

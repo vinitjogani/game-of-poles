@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float damage = 10f;
-    public float bulletSpeed = 10f;
+    public float bulletSpeed = 14f;
 
     private void Start()
     {
@@ -21,7 +21,6 @@ public class Bullet : MonoBehaviour
     // If the colliding object has health, deduct.
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
         Destroy(gameObject);
     }
 }

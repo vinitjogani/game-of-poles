@@ -17,24 +17,24 @@ public class ProjectileSimulator : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (last != null)
-        {
+        //if (last != null)
+        //{
 
-            if (old != null)
-            {
-                old.GetComponent<Light>().enabled = false;
-            }
+        //    if (old != null)
+        //    {
+        //        old.GetComponent<Light>().enabled = false;
+        //    }
 
-            old = last;
-            var oldLight = old.GetComponent<Light>();
-            var light = oldLight ? oldLight : old.AddComponent<Light>();
+        //    old = last;
+        //    var oldLight = old.GetComponent<Light>();
+        //    var light = oldLight ? oldLight : old.AddComponent<Light>();
 
-            light.enabled = true;
-            light.type = LightType.Point;
-            light.range = 3f;
-            light.intensity = 8f;
-            light.color = Color.yellow;
-        }
+        //    light.enabled = true;
+        //    light.type = LightType.Point;
+        //    light.range = 3f;
+        //    light.intensity = 8f;
+        //    light.color = Color.yellow;
+        //}
     }
 
     private void OnTriggerEnter(Collider other)

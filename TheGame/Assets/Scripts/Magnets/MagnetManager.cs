@@ -19,6 +19,7 @@ public class MagnetManager : MonoBehaviour
     public List<MagnetObject> objects = new List<MagnetObject>();
 
     public float distanceDecay = 1f;
+    public GameObject meshObj;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -34,14 +35,61 @@ public class MagnetManager : MonoBehaviour
                     body.AddForce(force * magnetStrength * objects[i].strength);
                 }
 
-                if (UpdateTime(i)) i--;
+                if (UpdateTime(i)) { i--; }
+                else { Particles(objects[i].obj, objects[i].time, objects[i].pole); }
             }
             catch (MissingReferenceException e)
             {
                 objects.RemoveAt(i);
                 i--;
+                continue;
             }
         }        
+    }
+
+    void Particles(GameObject obj, float time, Pole pole)
+    {
+        var system = obj.GetComponent<ParticleSystem>();
+        if (!system)
+        {
+            system = obj.AddComponent<ParticleSystem>();
+
+            var mr = obj.GetComponentInChildren<MeshRenderer>();
+            var sr = obj.GetComponentInChildren<SkinnedMeshRenderer>();
+
+
+            var shape = system.shape;
+            if (mr)
+            {
+                shape.shapeType = ParticleSystemShapeType.MeshRenderer;
+                shape.meshRenderer = mr;
+            }
+            else if (sr)
+            {
+                shape.shapeType = ParticleSystemShapeType.SkinnedMeshRenderer;
+                shape.skinnedMeshRenderer = sr;
+            }
+            else
+            {
+                shape.shapeType = ParticleSystemShapeType.Sphere;
+            }
+
+            var main = system.main;
+            main.startSize = 0.1f;
+            main.startLifetime = 0.2f;
+            main.scalingMode = ParticleSystemScalingMode.Local;
+        }
+
+        var psRender = obj.GetComponent<ParticleSystemRenderer>();
+        if (pole == Pole.NORTH)
+            psRender.material = Resources.Load<Material>("mblue");
+        else
+            psRender.material = Resources.Load<Material>("mred");
+        psRender.renderMode = ParticleSystemRenderMode.Mesh;
+        psRender.mesh = meshObj.GetComponent<MeshFilter>().mesh;
+
+        var emission = system.emission;
+        emission.rateOverTime = 100f * time / magnetizeTime;
     }
 
     Vector3 CalculateForce(int i)
@@ -52,8 +100,7 @@ public class MagnetManager : MonoBehaviour
         {
             if (ReferenceEquals(otherObject, objects[i])) continue;
 
-            var closestPoint = otherObject.obj.GetComponent<Collider>().ClosestPoint(position);
-            Vector3 difference = closestPoint - position;
+            Vector3 difference = otherObject.obj.transform.position - position;
             if (otherObject.pole == objects[i].pole) difference = -difference;
 
             float magnitude = Mathf.Log(Mathf.Max(1f, difference.magnitude) + 10) * distanceDecay;
@@ -69,12 +116,11 @@ public class MagnetManager : MonoBehaviour
 
         Color magnetColor = colors[objects[i].pole];
 
-        var renderers = objects[i].obj.GetComponentsInChildren<Renderer>();
-        for(int j = 0; j < renderers.Length; j++)
+        for (int j = 0; j < objects[i].originalColor.Count; j++)
         {
             Color lerpColor = Color.Lerp(objects[i].originalColor[j], magnetColor, objects[i].time / magnetizeTime);
 
-            try { renderers[j].material.color = lerpColor; }
+            try { objects[i].renders[j].material.color = lerpColor; }
             catch { }
         }
 

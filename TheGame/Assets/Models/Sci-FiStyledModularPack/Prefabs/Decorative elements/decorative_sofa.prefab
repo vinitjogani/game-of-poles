@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 496360}
   - component: {fileID: 3370452}
   - component: {fileID: 2393876}
+  - component: {fileID: 9009198841050925703}
   m_Layer: 0
   m_Name: decorative_sofa_LOD0
   m_TagString: Untagged
@@ -77,6 +78,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &9009198841050925703
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100274}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: fb39861b198df51498e189d15f1ebc9c, type: 3}
 --- !u!1 &115212
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +181,6 @@ GameObject:
   - component: {fileID: 20523856}
   - component: {fileID: 1876527689}
   - component: {fileID: 655081100}
-  - component: {fileID: 5692120014999012394}
   m_Layer: 0
   m_Name: decorative_sofa
   m_TagString: Untagged
@@ -245,17 +259,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &5692120014999012394
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 120334}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}

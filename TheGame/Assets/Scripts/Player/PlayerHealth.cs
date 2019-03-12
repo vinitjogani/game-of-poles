@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
 
         // Grayscale with health
         ColorGradingModel.Settings cgm = grayscaleBehaviour.colorGrading.settings;
-        //cgm.basic.saturation = 2 * health / maxHealth;
+        cgm.basic.saturation = 2 * health / maxHealth;
         cgm.tonemapping.neutralBlackIn = 0.1f * (maxHealth - health) / maxHealth;
         grayscaleBehaviour.colorGrading.settings = cgm;
 

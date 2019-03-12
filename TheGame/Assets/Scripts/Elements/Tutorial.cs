@@ -32,7 +32,7 @@ public class Tutorial : MonoBehaviour
 	void OnTriggerEnter(Collider collider)
     {
         
-        if ((collider.name == "Ball(Clone)" || collider.name == "Bow(Clone)") && objective == 1)
+        if (collider.CompareTag("Bullet") && objective == 1)
         {
             Destroy(shootplane);
             Destroy(collider);

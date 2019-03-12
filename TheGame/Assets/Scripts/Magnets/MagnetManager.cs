@@ -53,13 +53,11 @@ public class MagnetManager : MonoBehaviour
         {
             if (ReferenceEquals(otherObject, objects[i])) continue;
 
-            //var closestPoint = otherObject.obj.GetComponent<Collider>().ClosestPoint(position);
             Vector3 difference = otherObject.obj.transform.position - position;
             if (otherObject.pole == objects[i].pole) difference = -difference;
 
             float magnitude = Mathf.Log(Mathf.Max(1f, difference.magnitude) + 10) * distanceDecay;
             force += difference.normalized * otherObject.strength / magnitude;
-            Debug.Log(force + ", "  + difference + "," + position + ", " + otherObject.obj.name);
         }
 
         return force;

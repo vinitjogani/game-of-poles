@@ -15,7 +15,8 @@ public class TrackedL : MonoBehaviour
         Vector3 hPos = InputTracking.GetLocalPosition(XRNode.Head);
         Quaternion lRot = InputTracking.GetLocalRotation(XRNode.LeftHand);
 
-        transform.localPosition = new Vector3(lPos.x - hPos.x, lPos.y, lPos.z - hPos.z) * armLength - Vector3.up * heightAdjust;
+        var direction = new Vector3(lPos.x - hPos.x, lPos.y, lPos.z - hPos.z);
+        transform.localPosition = direction  * armLength - Vector3.up * heightAdjust;
         transform.localRotation = lRot;
     }
 }

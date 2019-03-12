@@ -17,7 +17,7 @@ public class MagnetObject
         this.time = time;
         this.strength = strength;
 
-        obj.AddComponent<CollisionSound>();
+        if(!obj.GetComponent<CollisionSound>()) obj.AddComponent<CollisionSound>();
         renders = obj.GetComponentsInChildren<Renderer>();
 
         foreach (var renderer in renders)

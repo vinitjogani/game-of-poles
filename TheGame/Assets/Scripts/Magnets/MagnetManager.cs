@@ -76,7 +76,7 @@ public class MagnetManager : MonoBehaviour
 
             var main = system.main;
             main.startSize = 0.1f;
-            main.startLifetime = 0.2f;
+            main.startLifetime = 0.05f;
             main.scalingMode = ParticleSystemScalingMode.Local;
         }
 

@@ -19,6 +19,8 @@ public class SlingShot : MonoBehaviour
     private Rigidbody body;
     private Pole pole;
 
+    public static Pole poleHistory = Pole.NORTH;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,7 @@ public class SlingShot : MonoBehaviour
         bullet.transform.SetParent(transform);
         bullet.transform.localPosition = new Vector3(0, 0, 0);
         bullet.transform.localRotation = Quaternion.Euler(0, 0, 0);
-        pole = Pole.NORTH;
+        pole = poleHistory;
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ public class SlingShot : MonoBehaviour
             if (selector > 0) pole = Pole.NORTH;
             else if (selector < 0) pole = Pole.SOUTH;
 
+            poleHistory = pole;
             if (pole == Pole.NORTH)
             {
                 bullet.GetComponentInChildren<Renderer>().material.color = Color.blue;

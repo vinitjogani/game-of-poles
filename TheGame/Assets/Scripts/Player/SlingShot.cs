@@ -11,13 +11,14 @@ public class SlingShot : MonoBehaviour
     public Transform offset;
     public float speed;
     public float reloadTime = 10f;
+    public Vector3 centerOfMass = new Vector3(0, 0, 1);
 
     private float reload = 0f;
     private bool shooting = false;
     private GameObject bullet;
     private Rigidbody body;
     private Pole pole;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class SlingShot : MonoBehaviour
     {
         bullet = Instantiate(ballPrefab);
         body = bullet.GetComponent<Rigidbody>();
+        body.centerOfMass = centerOfMass;
         body.isKinematic = true;
         bullet.transform.SetParent(transform);
         bullet.transform.localPosition = new Vector3(0, 0, 0);
@@ -57,7 +59,7 @@ public class SlingShot : MonoBehaviour
         var down = Input.GetAxis("Axis10") != 0 || Input.GetAxis("Fire2") != 0;
 
         var forward = InputTracking.GetLocalPosition(XRNode.RightHand) - InputTracking.GetLocalPosition(XRNode.LeftHand);
-        
+
         if (!shooting && down && forward.magnitude < 0.5 && reload <= 0 && bullet != null)
         {
             shooting = true;

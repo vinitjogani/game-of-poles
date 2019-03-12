@@ -10,7 +10,6 @@ public class TurretController : MonoBehaviour
     public float maximumAttackDistance = 10f;
     public float rotationDamping = 2f;
     public float shotInterval = 1f;
-    public float randomRange = 0f;
 
     private float shotTime = 2f;
     private Transform target;
@@ -30,9 +29,7 @@ public class TurretController : MonoBehaviour
         shotTime -= Time.deltaTime;
 
         rotate();
-
-        Shoot();
-
+       
     }
 
     // Instantiate a bullet towards the enemy.
@@ -40,25 +37,22 @@ public class TurretController : MonoBehaviour
     {
         //Reset the time when we shoot
         shotTime = shotInterval;
-
-        // Randomized target
-        Vector3 randomVector = new Vector3(Random.Range(0, randomRange), Random.Range(0, randomRange), Random.Range(0, randomRange));
-
+        
         // Instantiate a bullet forward
         var f_bullet = Instantiate(projectile);
-        f_bullet.transform.position = transform.position + transform.forward * 2 + randomVector;
+        f_bullet.transform.position = transform.position + transform.forward * 2;
 
         // Instantiate a bullet backward
         var b_bullet = Instantiate(projectile);
-        b_bullet.transform.position = transform.position - transform.forward * 2 + randomVector;
+        b_bullet.transform.position = transform.position - transform.forward * 2;
 
         // Instantiate a bullet left
         var l_bullet = Instantiate(projectile);
-        l_bullet.transform.position = transform.position - transform.right * 2 + randomVector;
+        l_bullet.transform.position = transform.position - transform.right * 2;
 
         // Instantiate a bullet right
         var r_bullet = Instantiate(projectile);
-        r_bullet.transform.position = transform.position + transform.right * 2 + randomVector;
+        r_bullet.transform.position = transform.position + transform.right * 2;
 
         f_bullet.GetComponent<Rigidbody>().AddForce(f_bullet.transform.forward * 20);
         b_bullet.GetComponent<Rigidbody>().AddForce(b_bullet.transform.forward * 20);

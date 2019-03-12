@@ -37,8 +37,8 @@ public class PlayerHealth : MonoBehaviour
         // Init grayscale
         grayscaleBehaviour = Camera.main.GetComponent<PostProcessingBehaviour>().profile;
         ColorGradingModel.Settings cgm = grayscaleBehaviour.colorGrading.settings;
-        cgm.basic.saturation = 2 * health / maxHealth;
-        cgm.tonemapping.neutralBlackIn = 0.1f - 0.1f * health / maxHealth;
+        cgm.basic.saturation = 1.5f;
+        cgm.tonemapping.neutralBlackIn = 0;
         grayscaleBehaviour.colorGrading.settings = cgm;
     }
 
@@ -67,7 +67,8 @@ public class PlayerHealth : MonoBehaviour
 
         // Grayscale with health
         ColorGradingModel.Settings cgm = grayscaleBehaviour.colorGrading.settings;
-        cgm.basic.saturation = health / maxHealth;
+        //cgm.basic.saturation = 2 * health / maxHealth;
+        cgm.tonemapping.neutralBlackIn = 0.1f * (maxHealth - health) / maxHealth;
         grayscaleBehaviour.colorGrading.settings = cgm;
 
         if (health <= 0) restartLevel = true;

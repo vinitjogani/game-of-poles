@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5EE0862B-8A9A-2D9A-CE36-2175C5FA7582}</ProjectGuid>
+    <ProjectGuid>{097089C5-41B7-B3E5-AAC9-822D5B57A5B1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_3_2;UNITY_2018_3;UNITY_2018;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_OSX;PLATFORM_STANDALONE;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_3_2;UNITY_2018_3;UNITY_2018;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_OSX;PLATFORM_STANDALONE;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;CROSS_PLATFORM_INPUT;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -47,7 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
-    <UnityProjectType>Editor:5</UnityProjectType>
+    <UnityProjectType>EditorPlugins:7</UnityProjectType>
     <UnityBuildTarget>StandaloneOSX:2</UnityBuildTarget>
     <UnityVersion>2018.3.2f1</UnityVersion>
   </PropertyGroup>
@@ -60,40 +60,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\BloomModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\BuiltinDebugViewsEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\ChromaticAberrationEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\ColorGradingModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\DefaultPostFxModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\DepthOfFieldModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\DitheringModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\EyeAdaptationModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\FogModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\GrainModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\MotionBlurModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\ScreenSpaceReflectionModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\UserLutModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Models\VignetteModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Monitors\HistogramMonitor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Monitors\ParadeMonitor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Monitors\WaveformMonitor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\PostProcessingBehaviourEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\PostProcessingFactory.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\PostProcessingInspector.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\PostProcessingModelEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\PostProcessingMonitor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\PropertyDrawers\GetSetDrawer.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\PropertyDrawers\MinDrawer.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\PropertyDrawers\TrackballGroupDrawer.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Utils\CurveEditor.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Utils\EditorGUIHelper.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Utils\EditorResources.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Utils\FxStyles.cs" />
-    <Compile Include="Assets\Sharon Models\Sci Fi Assets\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
+    <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+    <Compile Include="Assets\Standard Assets\Editor\Water\Water4\GerstnerDisplaceEditor.cs" />
+    <Compile Include="Assets\Standard Assets\Editor\Water\Water4\PlanarReflectionEditor.cs" />
+    <Compile Include="Assets\Standard Assets\Editor\Water\Water4\SpecularLightingEditor.cs" />
+    <Compile Include="Assets\Standard Assets\Editor\Water\Water4\WaterBaseEditor.cs" />
+    <Compile Include="Assets\Standard Assets\Editor\Water\Water4\WaterEditorUtility.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/Geet/Documents/UofT/CurrentCourses/CSC404/New Project/game-of-poles/TheGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -342,6 +314,24 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="ProBuilderMeshOps-Unity5">
+      <HintPath>/Users/Geet/Documents/UofT/CurrentCourses/CSC404/New Project/game-of-poles/TheGame/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+    </Reference>
+    <Reference Include="ProBuilderCore-Unity5">
+      <HintPath>/Users/Geet/Documents/UofT/CurrentCourses/CSC404/New Project/game-of-poles/TheGame/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll</HintPath>
+    </Reference>
+    <Reference Include="pb_Stl">
+      <HintPath>/Users/Geet/Documents/UofT/CurrentCourses/CSC404/New Project/game-of-poles/TheGame/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
+    </Reference>
+    <Reference Include="KdTreeLib">
+      <HintPath>/Users/Geet/Documents/UofT/CurrentCourses/CSC404/New Project/game-of-poles/TheGame/Assets/ProCore/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Poly2Tri">
+      <HintPath>/Users/Geet/Documents/UofT/CurrentCourses/CSC404/New Project/game-of-poles/TheGame/Assets/ProCore/ProBuilder/Classes/ClassesLib/Poly2Tri.dll</HintPath>
+    </Reference>
+    <Reference Include="ProBuilderEditor-Unity5">
+      <HintPath>/Users/Geet/Documents/UofT/CurrentCourses/CSC404/New Project/game-of-poles/TheGame/Assets/ProCore/ProBuilder/Editor/ProBuilderEditor-Unity5.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
       <HintPath>/Users/Geet/Documents/UofT/CurrentCourses/CSC404/New Project/game-of-poles/TheGame/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
@@ -717,9 +707,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{8DEA2A83-20D3-BCD3-69D6-835896A69D33}</Project>
-      <Name>Assembly-CSharp</Name>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{825EAFB0-B96E-C0F5-D6DE-C7163EF9B8AF}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
       <Project>{7149F1FB-DE73-99DB-2291-ABD276F85AB6}</Project>

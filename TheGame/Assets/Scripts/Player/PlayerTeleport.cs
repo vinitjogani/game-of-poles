@@ -105,6 +105,7 @@ public class PlayerTeleport : MonoBehaviour
             Physics.Raycast(cam.position, teleporter.transform.position - cam.position, out hit);
 
             var other = hit.collider.gameObject;
+            Debug.Log(hit.collider.name + ", " + (other == teleporter));
             if (other != teleporter) continue;
 
 

@@ -46,7 +46,7 @@ public class EnemyDamage : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Floor") && collision.relativeVelocity.magnitude > 0.5f && health > 0f)
+        if (!collision.gameObject.CompareTag("Floor") && !collision.gameObject.name.ToLower().Contains("floor") && collision.relativeVelocity.magnitude > 0.5f && health > 0f)
         {
             var body = collision.gameObject.GetComponent<Rigidbody>();
             float mass = body ? body.mass : 1;
@@ -64,7 +64,8 @@ public class EnemyDamage : MonoBehaviour
             // Play damage sound
             AudioSource temp = GetComponent<AudioSource>();
             AudioSource laudio = temp ? temp : gameObject.AddComponent<AudioSource>();
-            laudio.volume = 1 - 1 / collision.relativeVelocity.sqrMagnitude;
+            laudio.volume = (1 - 1 / collision.relativeVelocity.sqrMagnitude)/2;
+            Debug.Log(laudio.volume + ", " + collision.gameObject.name + ", " + collision.relativeVelocity.magnitude);
             laudio.PlayOneShot((AudioClip)Resources.Load("Explosion"));
         }
     }

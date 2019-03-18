@@ -41,6 +41,11 @@ public class EnemyDamage : MonoBehaviour
             var ai = GetComponent<EnemyAI>();
             if (ai) ai.enabled = false;
 
+            var particles = (GameObject)Resources.Load("EnemyKill");
+            var system = Instantiate(particles);
+            system.transform.position = transform.position;
+            system.transform.parent = transform;
+            system.GetComponent<ParticleSystem>().Play();
         }
     }
 

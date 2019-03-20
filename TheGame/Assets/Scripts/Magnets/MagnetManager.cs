@@ -21,6 +21,11 @@ public class MagnetManager : MonoBehaviour
     public float distanceDecay = 1f;
     public GameObject meshObj;
 
+    private void Start()
+    {
+        SwitchLockState();
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -131,5 +136,25 @@ public class MagnetManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    // Apply requested cursor state
+    void SwitchLockState()
+    {
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
+
+    void OnGUI()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) SwitchLockState();
     }
 }

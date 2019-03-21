@@ -12,8 +12,10 @@ public class CollisionSound : MonoBehaviour
     {
         AudioSource temp = GetComponent<AudioSource>();
         AudioSource laudio = temp ? temp : gameObject.AddComponent<AudioSource>();
-        laudio.volume = 1 - 1 / collision.relativeVelocity.sqrMagnitude;
-        int rand = UnityEngine.Random.Range(0, 3);
-        laudio.PlayOneShot((AudioClip)Resources.Load("collision{rand}"));
+        laudio.volume = 1 - 1 / collision.relativeVelocity.magnitude;
+        laudio.pitch = UnityEngine.Random.Range(-1.0f, 2.0f);
+        int rand = UnityEngine.Random.Range(1, 4);
+        if (!laudio.isPlaying) laudio.PlayOneShot((AudioClip)Resources.Load("collision"+rand));
+
     }
 }

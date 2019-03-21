@@ -60,7 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameWin.cs" />
     <Compile Include="Assets\Models\Teleportation Pad\CustomTeleporter.cs" />
     <Compile Include="Assets\Models\Yurowm\Demo\Scripts\Actions.cs" />
     <Compile Include="Assets\Models\Yurowm\Demo\Scripts\CharacterPanel.cs" />
@@ -87,10 +86,12 @@
     <Compile Include="Assets\Scripts\Enemy\TurretController.cs" />
     <Compile Include="Assets\Scripts\Enemy\TutorialEnemyDoor.cs" />
     <Compile Include="Assets\Scripts\Enemy\WaveSpawner.cs" />
+    <Compile Include="Assets\Scripts\GameWin.cs" />
     <Compile Include="Assets\Scripts\Magnets\Ball.cs" />
     <Compile Include="Assets\Scripts\Magnets\BulletCollide.cs" />
     <Compile Include="Assets\Scripts\Magnets\MagnetManager.cs" />
     <Compile Include="Assets\Scripts\Magnets\MagnetObject.cs" />
+    <Compile Include="Assets\Scripts\MouseLock.cs" />
     <Compile Include="Assets\Scripts\Player\ArrowShooter.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerBody.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCollider.cs" />

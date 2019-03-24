@@ -32,7 +32,9 @@ public class WaveSpawner : MonoBehaviour
             {
                 GameObject enemySpawn = enemySpawns[i % enemySpawns.Length];
                 Instantiate(enemy);
-                enemy.transform.position = enemySpawn.transform.position;
+                Vector3 position = new Vector3(enemySpawn.transform.position.x, 
+                    enemySpawn.transform.position.y + 2, enemySpawn.transform.position.z);
+                enemy.transform.position = position;
             }
 
             wavesSpawned++;

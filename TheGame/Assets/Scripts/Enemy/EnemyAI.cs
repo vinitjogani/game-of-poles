@@ -122,7 +122,7 @@ public class EnemyAI : MonoBehaviour
         // Play shooting sound
         AudioSource temp = GetComponent<AudioSource>();
         AudioSource laudio = temp ? temp : gameObject.AddComponent<AudioSource>();
-        laudio.volume = 0.1f;
+        laudio.volume = 0.3f;
         laudio.PlayOneShot((AudioClip)Resources.Load("EnemyBulletShoot"));
     }
 

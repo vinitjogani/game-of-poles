@@ -51,23 +51,27 @@ public class EnemyDamage : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Floor") && !collision.gameObject.name.ToLower().Contains("floor") && collision.relativeVelocity.magnitude > 0.5f && health > 0f)
+        if (health > 0f)
         {
             var body = collision.gameObject.GetComponent<Rigidbody>();
             float mass = body ? body.mass : 1;
-
-            if (collision.relativeVelocity.magnitude > 0.5f)
-            {
-                GetComponent<Actions>().Damage();
-            }
-
             // Kinetic energy = damage
             health -= 0.5f * mass * Mathf.Pow(collision.relativeVelocity.magnitude, 2);
-            var slider = transform.GetComponentInChildren<Slider>();
-            if (slider) slider.value = health / maxHealth;
 
-            // Play damage sound
-            if (!gameObject.GetComponent<CollisionSound>()) gameObject.AddComponent<CollisionSound>();
+            if (!collision.gameObject.CompareTag("Floor") && !collision.gameObject.name.ToLower().Contains("floor") && collision.relativeVelocity.magnitude > 0.5f)
+            {
+
+                if (collision.relativeVelocity.magnitude > 0.5f)
+                {
+                    GetComponent<Actions>().Damage();
+                }
+
+                var slider = transform.GetComponentInChildren<Slider>();
+                if (slider) slider.value = health / maxHealth;
+
+                // Play damage sound
+                if (!gameObject.GetComponent<CollisionSound>()) gameObject.AddComponent<CollisionSound>();
+            }
         }
     }
 

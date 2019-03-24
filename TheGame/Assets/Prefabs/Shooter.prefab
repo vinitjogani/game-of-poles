@@ -23,6 +23,7 @@ MonoBehaviour:
   lookAwayRange: 20
   shotTime: 3
   bypassRaycast: 0
+  distanceRandFactor: 5
 --- !u!1001 &7339472631603881830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36,15 +37,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -387.00473
+      value: 50.300003
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 194.61078
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 136.47498
+      value: 8.040001
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 398da42bc4f6f6e44852a9f96c6c4e41, type: 3}
       propertyPath: m_LocalRotation.x

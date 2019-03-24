@@ -67,11 +67,7 @@ public class EnemyDamage : MonoBehaviour
             if (slider) slider.value = health / maxHealth;
 
             // Play damage sound
-            AudioSource temp = GetComponent<AudioSource>();
-            AudioSource laudio = temp ? temp : gameObject.AddComponent<AudioSource>();
-            laudio.volume = (1 - 1 / collision.relativeVelocity.sqrMagnitude)/2;
-            Debug.Log(laudio.volume + ", " + collision.gameObject.name + ", " + collision.relativeVelocity.magnitude);
-            laudio.PlayOneShot((AudioClip)Resources.Load("Explosion"));
+            if (!gameObject.GetComponent<CollisionSound>()) gameObject.AddComponent<CollisionSound>();
         }
     }
 

@@ -16,7 +16,6 @@ public class PlayerCollider : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
-            Debug.Log("Taking damage!");
             var body = collision.gameObject.GetComponent<Rigidbody>();
             if (body)
             {

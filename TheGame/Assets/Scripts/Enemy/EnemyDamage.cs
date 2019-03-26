@@ -56,10 +56,10 @@ public class EnemyDamage : MonoBehaviour
             var body = collision.gameObject.GetComponent<Rigidbody>();
             float mass = body ? body.mass : 1;
             // Kinetic energy = damage
-            health -= 0.5f * mass * Mathf.Pow(collision.relativeVelocity.magnitude, 2);
-
-            if (!collision.gameObject.CompareTag("Floor") && !collision.gameObject.name.ToLower().Contains("floor") && collision.relativeVelocity.magnitude > 0.5f)
+            var hdiff = collision.transform.position.y - transform.position.y;
+            if (((!collision.gameObject.CompareTag("Floor") && !collision.gameObject.name.ToLower().Contains("floor")) || hdiff > 0) && collision.relativeVelocity.magnitude > 0.5f)
             {
+                health -= 0.5f * mass * Mathf.Pow(collision.relativeVelocity.magnitude, 2);
 
                 if (collision.relativeVelocity.magnitude > 0.5f)
                 {

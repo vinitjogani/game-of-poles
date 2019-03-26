@@ -105,7 +105,7 @@ PrefabInstance:
     - target: {fileID: 5858198729443426837, guid: c524fa524db1c624b8c39382b62724e4,
         type: 3}
       propertyPath: maxHealth
-      value: 80
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7065576413614189494, guid: c524fa524db1c624b8c39382b62724e4,
         type: 3}
@@ -518,9 +518,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4967080621936504483}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1445890111488256200 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 5836182324206732907, guid: c524fa524db1c624b8c39382b62724e4,
+--- !u!4 &1945765181219819520 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6912500539048476323, guid: c524fa524db1c624b8c39382b62724e4,
     type: 3}
   m_PrefabInstance: {fileID: 4967080621936504483}
   m_PrefabAsset: {fileID: 0}
@@ -590,9 +590,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4967080621936504483}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1945765181219819576 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6912500539048476315, guid: c524fa524db1c624b8c39382b62724e4,
+--- !u!65 &1445890111488256200 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 5836182324206732907, guid: c524fa524db1c624b8c39382b62724e4,
     type: 3}
   m_PrefabInstance: {fileID: 4967080621936504483}
   m_PrefabAsset: {fileID: 0}
@@ -626,9 +626,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4967080621936504483}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1945765181219819568 stripped
+--- !u!4 &1945765181219819576 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6912500539048476307, guid: c524fa524db1c624b8c39382b62724e4,
+  m_CorrespondingSourceObject: {fileID: 6912500539048476315, guid: c524fa524db1c624b8c39382b62724e4,
     type: 3}
   m_PrefabInstance: {fileID: 4967080621936504483}
   m_PrefabAsset: {fileID: 0}
@@ -662,9 +662,9 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4967080621936504483}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1945765181219819520 stripped
+--- !u!4 &1945765181219819568 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6912500539048476323, guid: c524fa524db1c624b8c39382b62724e4,
+  m_CorrespondingSourceObject: {fileID: 6912500539048476307, guid: c524fa524db1c624b8c39382b62724e4,
     type: 3}
   m_PrefabInstance: {fileID: 4967080621936504483}
   m_PrefabAsset: {fileID: 0}

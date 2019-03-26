@@ -56,7 +56,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (health > 15 && health - damage < 15)
+        if (health > 5 && health - damage < 5)
         {
             AudioSource temp = GetComponent<AudioSource>();
             this.lAudio = temp ? temp : gameObject.AddComponent<AudioSource>();
@@ -67,10 +67,14 @@ public class PlayerHealth : MonoBehaviour
 
         // Grayscale with health
         ColorGradingModel.Settings cgm = grayscaleBehaviour.colorGrading.settings;
-        cgm.basic.saturation = 2 * health / maxHealth;
+        cgm.basic.saturation = Mathf.Max(2 * health / maxHealth, 0);
         cgm.tonemapping.neutralBlackIn = 0.1f * (maxHealth - health) / maxHealth;
         grayscaleBehaviour.colorGrading.settings = cgm;
 
-        if (health <= 0) restartLevel = true;
+        if (health <= 0)
+        {
+            restartLevel = true;
+            Debug.Log("I died" + ", " + lAudio.isPlaying);
+        }
     }
 }

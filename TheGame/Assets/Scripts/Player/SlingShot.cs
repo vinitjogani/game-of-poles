@@ -70,7 +70,7 @@ public class SlingShot : MonoBehaviour
 
         if (shooting && bullet)
         {
-            bullet.transform.localPosition = new Vector3(0, 0, -forward.magnitude);
+            bullet.transform.localPosition = new Vector3(0, 0, 0.5f -forward.magnitude);
         }
 
         if (shooting && !down && bullet)

@@ -8,6 +8,8 @@ public class WaveSpawner : MonoBehaviour
     public List<int> numberOfEnemiesPerWave;
     public GameObject enemy;
 
+    public float randTimeLow = 0f;
+    public float randTimeHigh = 7f;
     public float randEnemyNumLow = 3f;
     public float randEnemyNumHigh = 7f;
     public static float score = 0f;
@@ -16,7 +18,10 @@ public class WaveSpawner : MonoBehaviour
     private int wavesSpawned = 0;
     private List<GameObject> instantiated = new List<GameObject>();
     private List<GameObject> deleted = new List<GameObject>();
-    private float deltaTime = 0f;
+    private List<float> timesToSpawn = new List<float>();
+    private float totalTime = 0f;
+    private int spawnIndex = 0;
+    private float timeToDelete = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -38,12 +43,14 @@ public class WaveSpawner : MonoBehaviour
 
             for (int i=0; i < numberOfEnemiesPerWave[wavesSpawned]; i++)
             {
-                GameObject enemySpawn = enemySpawns[i % enemySpawns.Length];
+                GameObject enemySpawn = enemySpawns[spawnIndex % enemySpawns.Length];
                 var clone = Instantiate(enemy);
                 instantiated.Add(clone);
                 Vector3 position = new Vector3(enemySpawn.transform.position.x, 
                     enemySpawn.transform.position.y + 2, enemySpawn.transform.position.z);
                 clone.transform.position = position;
+
+                spawnIndex++;
             }
 
             wavesSpawned++;
@@ -57,23 +64,35 @@ public class WaveSpawner : MonoBehaviour
 
             for (int i = 0; i < UnityEngine.Random.Range(randEnemyNumLow, randEnemyNumHigh); i++)
             {
-                GameObject enemySpawn = enemySpawns[i % enemySpawns.Length];
-                var clone = Instantiate(enemy);
-                instantiated.Add(clone);
-                Vector3 position = new Vector3(enemySpawn.transform.position.x,
-                    enemySpawn.transform.position.y + 2, enemySpawn.transform.position.z);
-                clone.transform.position = position;
+                timesToSpawn.Add(UnityEngine.Random.Range(randTimeLow, randTimeHigh));
             }
 
             wavesSpawned++;
         }
 
-        deltaTime += Time.deltaTime;
+        totalTime += Time.deltaTime;
 
-        if (deltaTime > 5f)
+        if (totalTime >= timeToDelete && deleted.Count > 0)
         {
             Destroy(deleted[0]);
-            deleted.removeAt(0);
+            deleted.RemoveAt(0);
+        }
+
+        foreach (float timeToSpawn in timesToSpawn)
+        {
+            if (totalTime >= timeToSpawn)
+            {
+                GameObject enemySpawn = enemySpawns[spawnIndex % enemySpawns.Length];
+                var clone = Instantiate(enemy);
+                instantiated.Add(clone);
+                Vector3 position = new Vector3(enemySpawn.transform.position.x,
+                                enemySpawn.transform.position.y + 2, enemySpawn.transform.position.z);
+                clone.transform.position = position;
+
+                spawnIndex++;
+            }
+
+            timesToSpawn.Remove(timeToSpawn);
         }
     }
 
@@ -91,8 +110,8 @@ public class WaveSpawner : MonoBehaviour
 
         foreach (var obj in deleted)
         {
-            Debug.Log("removed enemy");
             instantiated.Remove(obj);
+            timeToDelete = totalTime + UnityEngine.Random.Range(randTimeLow, randTimeHigh);
         }
     }
 }

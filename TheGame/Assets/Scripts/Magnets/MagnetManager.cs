@@ -107,11 +107,11 @@ public class MagnetManager : MonoBehaviour
             if (ReferenceEquals(otherObject, objects[i])) continue;
 
             var col = otherObject.obj.GetComponent<Collider>();
-            //var closestPoint = col.ClosestPoint(position);
+            var closestPoint = col.ClosestPoint(position);
             var center = col.bounds.center;
-            //if (closestPoint == position) closestPoint = center;
+            if (closestPoint == position) closestPoint = center;
 
-            Vector3 difference = center - position;
+            Vector3 difference = closestPoint - position;
             if (otherObject.pole == objects[i].pole) difference = -difference;
 
             float magnitude = Mathf.Log(Mathf.Max(1f, difference.magnitude) + 10) * distanceDecay;

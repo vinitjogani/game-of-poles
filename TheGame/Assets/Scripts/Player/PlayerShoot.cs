@@ -34,23 +34,23 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        projectileTime -= Time.fixedDeltaTime;
-        if (projectileTime <= 0f)
-        {
-            Simulate();
-            projectileTime = 0.1f;
-        }
-    }
+    //private void FixedUpdate()
+    //{
+    //    projectileTime -= Time.fixedDeltaTime;
+    //    if (projectileTime <= 0f)
+    //    {
+    //        //Simulate();
+    //        projectileTime = 0.1f;
+    //    }
+    //}
 
-    void Simulate()
-    {
-        var bullet = Instantiate(projectilePrefab);
-        bullet.transform.position = transform.position;
-        bullet.transform.rotation = transform.rotation;
-        bullet.transform.SetParent(transform);
-    }
+    //void Simulate()
+    //{
+    //    var bullet = Instantiate(projectilePrefab);
+    //    bullet.transform.position = transform.position;
+    //    bullet.transform.rotation = transform.rotation;
+    //    bullet.transform.SetParent(transform);
+    //}
 
     void Fire(Pole type)
     {

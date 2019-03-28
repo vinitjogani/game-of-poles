@@ -5044,6 +5044,7 @@ GameObject:
   - component: {fileID: 5143998615076931445}
   - component: {fileID: 1786475002163838802}
   - component: {fileID: 1786475002163838803}
+  - component: {fileID: 5143998615076931446}
   m_Layer: 0
   m_Name: Head
   m_TagString: MainCamera
@@ -5059,6 +5060,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5143998615076931444}
   m_Enabled: 1
+--- !u!114 &5143998615076931446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143998615076931444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: d317bc8b7fcf14c8eb8ac5e6b9401ddc, type: 2}
 --- !u!135 &5143998615327603612
 SphereCollider:
   m_ObjectHideFlags: 0

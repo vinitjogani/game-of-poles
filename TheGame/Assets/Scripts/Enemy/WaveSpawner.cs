@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class WaveSpawner : MonoBehaviour
     public int randEnemyNumLow = 3;
     public int randEnemyNumHigh = 7;
     public static float score = 0f;
+    public static int highScore = 0;
+    public Text scoreText, highScoreText;
 
     private GameObject[] enemySpawns;
     private int wavesSpawned = 0;
@@ -27,6 +30,12 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         enemySpawns = GameObject.FindGameObjectsWithTag("EnemySpawn");
+        score = 0;
+
+        string scoreString = (highScore).ToString();
+        while (scoreString.Length < 4)
+            scoreString = "0" + scoreString;
+        highScoreText.text = "HIGH: " + scoreString;
     }
 
     // Update is called once per frame
@@ -76,6 +85,21 @@ public class WaveSpawner : MonoBehaviour
         }
 
         wavesSpawned++;
+    }
+
+    private void OnGUI()
+    {
+        string scoreString = ((int)score).ToString();
+        while (scoreString.Length < 4)
+            scoreString = "0" + scoreString;
+        scoreText.text = scoreString;
+
+        if (score > highScore)
+        {
+            highScore = (int)score;
+            highScoreText.text = "HIGH: " + scoreString;
+        }
+
     }
 
     void FixedUpdate()

@@ -46,7 +46,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if (restartLevel && !lAudio.isPlaying)
         {
-            SceneManager.LoadScene(PlayerState.level);
+            if (!SceneManager.GetActiveScene().name.Contains("4"))
+                SceneManager.LoadScene(PlayerState.level);
+            else
+                SceneManager.LoadScene("ScoreScene");
         }
 
         PlayerState.respwanAt = transform.position;

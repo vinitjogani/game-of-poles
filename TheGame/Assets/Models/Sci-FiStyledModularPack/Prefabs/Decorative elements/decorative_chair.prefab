@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 486698}
   - component: {fileID: 6482166}
   - component: {fileID: 20563618}
-  - component: {fileID: 1272945519}
+  - component: {fileID: 1712206898328597562}
   m_Layer: 0
   m_Name: decorative_chair
   m_TagString: Untagged
@@ -105,7 +105,7 @@ Transform:
   m_GameObject: {fileID: 109742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.200001, y: 1, z: 1.200001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 416084}
   - {fileID: 436440}
@@ -149,7 +149,7 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2350354}
   m_Enabled: 1
---- !u!54 &1272945519
+--- !u!54 &1712206898328597562
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

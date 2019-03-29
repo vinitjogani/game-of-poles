@@ -131,7 +131,10 @@ public class MagnetManager : MonoBehaviour
         {
             Color lerpColor = Color.Lerp(objects[i].originalColor[j], magnetColor, objects[i].time / magnetizeTime);
 
-            try { objects[i].renders[j].material.color = lerpColor; }
+            try {
+                if (objects[i].renders[j].material.HasProperty("_Color"))
+                    objects[i].renders[j].material.color = lerpColor;
+            }
             catch { }
         }
 

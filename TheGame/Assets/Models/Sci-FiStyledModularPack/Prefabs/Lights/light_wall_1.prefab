@@ -80,8 +80,8 @@ GameObject:
   - component: {fileID: 406728}
   - component: {fileID: 3314720}
   - component: {fileID: 2362008}
-  - component: {fileID: 6508342}
   - component: {fileID: 6906203363566176141}
+  - component: {fileID: 4516183226594206822}
   m_Layer: 0
   m_Name: light_wall_1
   m_TagString: Untagged
@@ -150,19 +150,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6508342
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195090}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3049541, y: 2.0362437, z: 0.25563556}
-  m_Center: {x: -0.00463707, y: 1.3121829, z: 0.027045097}
 --- !u!54 &6906203363566176141
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -179,3 +166,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &4516183226594206822
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 7f4bb4ae1f8094c47abdd09a12d0a39c, type: 3}

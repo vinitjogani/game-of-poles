@@ -49,6 +49,11 @@ public class EnemyDamage : MonoBehaviour
         }
     }
 
+    bool Ignore(Collision collision)
+    {
+        return collision.gameObject.CompareTag("Floor") || collision.gameObject.name.ToLower().Contains("floor");
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (health > 0f)
@@ -57,7 +62,7 @@ public class EnemyDamage : MonoBehaviour
             float mass = body ? body.mass : 1;
             // Kinetic energy = damage
             var hdiff = collision.transform.position.y - transform.position.y;
-            if (((!collision.gameObject.CompareTag("Floor") && !collision.gameObject.name.ToLower().Contains("floor")) || hdiff > 0) && collision.relativeVelocity.magnitude > 0.5f)
+            if ((!Ignore(collision) || hdiff > 0) && collision.relativeVelocity.magnitude > 0.5f)
             {
                 health -= 0.5f * mass * Mathf.Pow(collision.relativeVelocity.magnitude, 2);
 

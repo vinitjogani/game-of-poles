@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
 
 public class PlayerTeleport : MonoBehaviour
 {
@@ -8,22 +9,16 @@ public class PlayerTeleport : MonoBehaviour
 
     private float alpha = 0f;
     private float direction = 0f;
-    private Texture2D black;
 
     private Transform teleportTo;
     private Teleporter old;
     float axis9 = 0;
 
+    private PostProcessingProfile grayscaleBehaviour;
+
     private void Start()
     {
-        black = new Texture2D(1, 1);
-        black.SetPixel(0, 0, new Color(0, 0, 0, 0));
-        black.Apply();
-    }
-
-    void OnGUI()
-    {
-        GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), black);
+        grayscaleBehaviour = Camera.main.GetComponent<PostProcessingBehaviour>().profile;
     }
 
     void Update()
@@ -32,8 +27,9 @@ public class PlayerTeleport : MonoBehaviour
         {
             alpha += direction;
 
-            black.SetPixel(0, 0, new Color(0, 0, 0, alpha));
-            black.Apply();
+            ColorGradingModel.Settings cgm = grayscaleBehaviour.colorGrading.settings;
+            cgm.basic.postExposure = alpha * (-8f);
+            grayscaleBehaviour.colorGrading.settings = cgm;
 
             if (alpha >= 1f)
             {

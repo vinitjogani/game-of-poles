@@ -26,6 +26,8 @@ public class Tutorial : MonoBehaviour
         if (collision.gameObject.name == "ObjectiveCube" && objective == 2)
         {
             Destroy(attractplane);
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
 	}
 

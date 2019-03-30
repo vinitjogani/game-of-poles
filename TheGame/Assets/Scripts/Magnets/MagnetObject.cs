@@ -17,12 +17,19 @@ public class MagnetObject
         this.time = time;
         this.strength = strength;
 
-        if(!obj.GetComponent<CollisionSound>()) obj.AddComponent<CollisionSound>();
+        Debug.Log("Bullet hit " + obj.name);
+
+        if (!obj.GetComponent<CollisionSound>()) obj.AddComponent<CollisionSound>();
         renders = obj.GetComponentsInChildren<Renderer>();
 
         foreach (var renderer in renders)
         {
-            try { originalColor.Add(renderer.material.color); }
+            try
+            {
+                if (renderer.material.HasProperty("_Color"))
+                    originalColor.Add(renderer.material.color);
+                else originalColor.Add(Color.black);
+            }
             catch { }
         }
     }

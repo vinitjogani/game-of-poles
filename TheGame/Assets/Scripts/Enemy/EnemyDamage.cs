@@ -49,29 +49,34 @@ public class EnemyDamage : MonoBehaviour
         }
     }
 
+    bool Ignore(Collision collision)
+    {
+        return collision.gameObject.CompareTag("Floor") || collision.gameObject.name.ToLower().Contains("floor");
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Floor") && !collision.gameObject.name.ToLower().Contains("floor") && collision.relativeVelocity.magnitude > 0.5f && health > 0f)
+        if (health > 0f)
         {
             var body = collision.gameObject.GetComponent<Rigidbody>();
             float mass = body ? body.mass : 1;
-
-            if (collision.relativeVelocity.magnitude > 0.5f)
-            {
-                GetComponent<Actions>().Damage();
-            }
-
             // Kinetic energy = damage
-            health -= 0.5f * mass * Mathf.Pow(collision.relativeVelocity.magnitude, 2);
-            var slider = transform.GetComponentInChildren<Slider>();
-            if (slider) slider.value = health / maxHealth;
+            var hdiff = collision.transform.position.y - transform.position.y;
+            if ((!Ignore(collision) || hdiff > 0) && collision.relativeVelocity.magnitude > 0.5f)
+            {
+                health -= 0.5f * mass * Mathf.Pow(collision.relativeVelocity.magnitude, 2);
 
-            // Play damage sound
-            AudioSource temp = GetComponent<AudioSource>();
-            AudioSource laudio = temp ? temp : gameObject.AddComponent<AudioSource>();
-            laudio.volume = (1 - 1 / collision.relativeVelocity.sqrMagnitude)/2;
-            Debug.Log(laudio.volume + ", " + collision.gameObject.name + ", " + collision.relativeVelocity.magnitude);
-            laudio.PlayOneShot((AudioClip)Resources.Load("Explosion"));
+                if (collision.relativeVelocity.magnitude > 0.5f)
+                {
+                    GetComponent<Actions>().Damage();
+                }
+
+                var slider = transform.GetComponentInChildren<Slider>();
+                if (slider) slider.value = health / maxHealth;
+
+                // Play damage sound
+                if (!gameObject.GetComponent<CollisionSound>()) gameObject.AddComponent<CollisionSound>();
+            }
         }
     }
 

@@ -34,7 +34,7 @@ public class SlingShot : MonoBehaviour
         body.centerOfMass = centerOfMass;
         body.isKinematic = true;
         bullet.transform.SetParent(transform);
-        bullet.transform.localPosition = new Vector3(0, 0, 0);
+        bullet.transform.localPosition = Vector3.forward * 0.5f;
         bullet.transform.localRotation = Quaternion.Euler(0, 0, 0);
         pole = poleHistory;
     }
@@ -70,7 +70,7 @@ public class SlingShot : MonoBehaviour
 
         if (shooting && bullet)
         {
-            bullet.transform.localPosition = new Vector3(0, 0, -forward.magnitude);
+            bullet.transform.localPosition = new Vector3(0, 0, 0.5f -forward.magnitude);
         }
 
         if (shooting && !down && bullet)

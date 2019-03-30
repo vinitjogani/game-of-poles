@@ -94,18 +94,24 @@ public class MagnetManager : MonoBehaviour
         psRender.mesh = meshObj.GetComponent<MeshFilter>().mesh;
 
         var emission = system.emission;
-        emission.rateOverTime = 100f * time / magnetizeTime;
+        emission.rateOverTime = 100f * time / magnetizeTime + (time > 0.5? 50: 0);
     }
 
     Vector3 CalculateForce(int i)
     {
-        var position = objects[i].obj.transform.position;
+        var position = objects[i].obj.GetComponent<Collider>().bounds.center;
+
         Vector3 force = new Vector3(0, 0, 0);
         foreach (var otherObject in objects)
         {
             if (ReferenceEquals(otherObject, objects[i])) continue;
 
-            Vector3 difference = otherObject.obj.transform.position - position;
+            var col = otherObject.obj.GetComponent<Collider>();
+            var closestPoint = col.ClosestPoint(position);
+            var center = col.bounds.center;
+            if (closestPoint == position) closestPoint = center;
+
+            Vector3 difference = closestPoint - position;
             if (otherObject.pole == objects[i].pole) difference = -difference;
 
             float magnitude = Mathf.Log(Mathf.Max(1f, difference.magnitude) + 10) * distanceDecay;
@@ -125,7 +131,10 @@ public class MagnetManager : MonoBehaviour
         {
             Color lerpColor = Color.Lerp(objects[i].originalColor[j], magnetColor, objects[i].time / magnetizeTime);
 
-            try { objects[i].renders[j].material.color = lerpColor; }
+            try {
+                if (objects[i].renders[j].material.HasProperty("_Color"))
+                    objects[i].renders[j].material.color = lerpColor;
+            }
             catch { }
         }
 

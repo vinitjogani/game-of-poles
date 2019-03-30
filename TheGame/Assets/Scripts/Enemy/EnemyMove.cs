@@ -7,7 +7,8 @@ public class EnemyMove : MonoBehaviour
 {
     private NavMeshAgent nav;
     private Actions actions;
-    private float timePassed = 0f;
+    public float minMoveDistance = 5f;
+    public float maxMoveDistance = 30f; 
 
     // Start is called before the first frame update
     void Start()
@@ -25,15 +26,11 @@ public class EnemyMove : MonoBehaviour
 
         var head = transform.position + Vector3.up * 3;
         var distance = (Camera.main.transform.position - transform.position).magnitude;
-        //Debug.DrawRay(head, transform.forward * distance + Vector3.down * 2, Color.green);
-        //Ray ray = new Ray(head, transform.forward * distance + Vector3.down * 2);
 
-        //if (Physics.Raycast(ray, out hit, float.MaxValue, ~0, QueryTriggerInteraction.Ignore))
-        //{
-        if (distance > 5f && distance < 30f)
+        if (distance > minMoveDistance && distance < maxMoveDistance)
         {
             var enemy = GetComponent<EnemyAI>();
-            if (enemy.shotTime > 1f && enemy.shotTime < enemy.shotInterval)
+            if ((enemy.shotTime > 1f && enemy.shotTime < enemy.shotInterval) || enemy.maximumAttackDistance <= distance)
             {
                 actions.Walk();
                 nav.isStopped = false;
@@ -43,10 +40,10 @@ public class EnemyMove : MonoBehaviour
                 AudioSource temp = GetComponent<AudioSource>();
                 AudioSource laudio = temp ? temp : gameObject.AddComponent<AudioSource>();
                 AudioClip audioClip = (AudioClip)Resources.Load("EnemyWalk");
-                if (timePassed <= audioClip.length)
+                if (!laudio.isPlaying)
                 {
+                    laudio.volume = 0.2f;
                     laudio.PlayOneShot(audioClip);
-                    timePassed = 0f;
                 }
             }
             else
@@ -59,7 +56,5 @@ public class EnemyMove : MonoBehaviour
             nav.isStopped = true;
             actions.Aiming();
         }
-        //}
-        timePassed += Time.deltaTime;
     }
 }

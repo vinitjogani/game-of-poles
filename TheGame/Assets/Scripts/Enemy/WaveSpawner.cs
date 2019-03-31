@@ -17,6 +17,9 @@ public class WaveSpawner : MonoBehaviour
     public static float score = 0f;
     public static int highScore = 0;
     public Text scoreText, highScoreText;
+    public Text scoreText2, highScoreText2;
+    public Text scoreText3, highScoreText3;
+    public Text scoreText4, highScoreText4;
 
     private GameObject[] enemySpawns;
     private int wavesSpawned = 0;
@@ -35,7 +38,10 @@ public class WaveSpawner : MonoBehaviour
         string scoreString = (highScore).ToString();
         while (scoreString.Length < 4)
             scoreString = "0" + scoreString;
-        highScoreText.text = "HIGH: " + scoreString;
+        highScoreText.text = "HIGHEST: " + scoreString;
+        highScoreText2.text = "HIGHEST: " + scoreString;
+        highScoreText3.text = "HIGHEST: " + scoreString;
+        highScoreText4.text = "HIGHEST: " + scoreString;
     }
 
     // Update is called once per frame
@@ -93,11 +99,16 @@ public class WaveSpawner : MonoBehaviour
         while (scoreString.Length < 4)
             scoreString = "0" + scoreString;
         scoreText.text = scoreString;
-
+        scoreText2.text = scoreString;
+        scoreText3.text = scoreString;
+        scoreText4.text = scoreString;
         if (score > highScore)
         {
             highScore = (int)score;
-            highScoreText.text = "HIGH: " + scoreString;
+            highScoreText.text = "HIGHEST: " + scoreString;
+            highScoreText2.text = "HIGHEST: " + scoreString;
+            highScoreText3.text = "HIGHEST: " + scoreString;
+            highScoreText4.text = "HIGHEST: " + scoreString;
         }
 
     }

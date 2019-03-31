@@ -15,7 +15,7 @@ public class LoadScores : MonoBehaviour
         string scoreString = (WaveSpawner.highScore).ToString();
         while (scoreString.Length < 4)
             scoreString = "0" + scoreString;
-        highScoreText.text = "HIGH: " + scoreString;
+        highScoreText.text = "HIGHEST: " + scoreString;
 
 
         scoreString = ((int)WaveSpawner.score).ToString();

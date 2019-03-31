@@ -3,26 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadScores : MonoBehaviour
+public class LoadHighScore : MonoBehaviour
 {
-
-    public Text scoreText, highScoreText;
-
+    public Text highScoreText;
     // Start is called before the first frame update
     void Start()
     {
-
         string scoreString = (WaveSpawner.highScore).ToString();
         while (scoreString.Length < 4)
             scoreString = "0" + scoreString;
-        highScoreText.text = "HIGHEST: " + scoreString;
-
-
-        scoreString = ((int)WaveSpawner.score).ToString();
-        while (scoreString.Length < 4)
-            scoreString = "0" + scoreString;
-        scoreText.text = "SCORE: " + scoreString;
-
+        highScoreText.text = "HIGH SCORE\n" + scoreString;
     }
 
 }

@@ -86,6 +86,12 @@ public class SlingShot : MonoBehaviour
             shooting = false;
             reload = reloadTime;
             bullet = null;
+
+
+            AudioSource temp = GetComponent<AudioSource>();
+            AudioSource laudio = temp ? temp : gameObject.AddComponent<AudioSource>();
+            laudio.volume = 0.4f;
+            laudio.PlayOneShot((AudioClip)Resources.Load("PlayerBulletShoot"));
         }
 
         if (reload > 0)

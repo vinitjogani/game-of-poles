@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571334, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2133,11 +2133,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Extents: {x: 1.725, y: 2.945, z: 2.64}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1.62, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1001 &207688225
 PrefabInstance:
@@ -5046,6 +5046,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6427996, guid: db49253e161c21440b7ccf6d59865098, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db49253e161c21440b7ccf6d59865098, type: 3}
 --- !u!4 &454687887 stripped
@@ -5790,6 +5794,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shooter (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4598672082985359730, guid: d94e673549b68de4d98151790976d366,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598672082985359730, guid: d94e673549b68de4d98151790976d366,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357061449554159815, guid: d94e673549b68de4d98151790976d366,
+        type: 3}
+      propertyPath: shotInterval
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357061449554159815, guid: d94e673549b68de4d98151790976d366,
+        type: 3}
+      propertyPath: rotationDamping
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7339472631604018566, guid: d94e673549b68de4d98151790976d366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5845,16 +5869,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6357061449554159815, guid: d94e673549b68de4d98151790976d366,
-        type: 3}
-      propertyPath: shotInterval
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6357061449554159815, guid: d94e673549b68de4d98151790976d366,
-        type: 3}
-      propertyPath: rotationDamping
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8781020531860363989, guid: d94e673549b68de4d98151790976d366,
         type: 3}
       propertyPath: m_Mass
@@ -5864,16 +5878,6 @@ PrefabInstance:
         type: 3}
       propertyPath: maxHealth
       value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598672082985359730, guid: d94e673549b68de4d98151790976d366,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598672082985359730, guid: d94e673549b68de4d98151790976d366,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d94e673549b68de4d98151790976d366, type: 3}
@@ -8073,6 +8077,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shooter (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4598672082985359730, guid: d94e673549b68de4d98151790976d366,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598672082985359730, guid: d94e673549b68de4d98151790976d366,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357061449554159815, guid: d94e673549b68de4d98151790976d366,
+        type: 3}
+      propertyPath: shotInterval
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357061449554159815, guid: d94e673549b68de4d98151790976d366,
+        type: 3}
+      propertyPath: rotationDamping
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7339472631604018566, guid: d94e673549b68de4d98151790976d366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8126,26 +8150,6 @@ PrefabInstance:
     - target: {fileID: 7339472631604018566, guid: d94e673549b68de4d98151790976d366,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6357061449554159815, guid: d94e673549b68de4d98151790976d366,
-        type: 3}
-      propertyPath: shotInterval
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6357061449554159815, guid: d94e673549b68de4d98151790976d366,
-        type: 3}
-      propertyPath: rotationDamping
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598672082985359730, guid: d94e673549b68de4d98151790976d366,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598672082985359730, guid: d94e673549b68de4d98151790976d366,
-        type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10115,6 +10119,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mover
       objectReference: {fileID: 0}
+    - target: {fileID: 424721551372474883, guid: c524fa524db1c624b8c39382b62724e4,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424721551372474883, guid: c524fa524db1c624b8c39382b62724e4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6912500539048476407, guid: c524fa524db1c624b8c39382b62724e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10168,16 +10182,6 @@ PrefabInstance:
     - target: {fileID: 6912500539048476407, guid: c524fa524db1c624b8c39382b62724e4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 424721551372474883, guid: c524fa524db1c624b8c39382b62724e4,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 424721551372474883, guid: c524fa524db1c624b8c39382b62724e4,
-        type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13850,6 +13854,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!1 &1387875372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 196900, guid: 8c3a444b099b80643a84476bfefca60d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1872407855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &1387875373
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387875372}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.082, y: 2, z: 2.082}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.082, y: 2, z: -1.9180001}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1411546443
 PrefabInstance:
   m_ObjectHideFlags: 0

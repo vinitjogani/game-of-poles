@@ -1758,7 +1758,7 @@ MonoBehaviour:
   lookAwayTime: 5
   lookAwayRange: 1000
   shotTime: 0
-  bypassRaycast: 0
+  bypassRaycast: 1
   distanceRandFactor: 5
 --- !u!114 &9141098225145018318
 MonoBehaviour:
@@ -1783,7 +1783,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1945765181219524020}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.15
+  m_Radius: 0.2
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 99

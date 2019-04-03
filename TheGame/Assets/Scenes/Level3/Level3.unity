@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -328,8 +328,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.023529412, g: 1, b: 0.84705883, a: 1}
-  m_Intensity: 0.8
-  m_Range: 200
+  m_Intensity: 1.4
+  m_Range: 1000
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -5754,14 +5754,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.4789886
       objectReference: {fileID: 0}
-    - target: {fileID: 221101145, guid: 72041921a80be1c40a5a21376a9c6038, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5958278807988549920, guid: 72041921a80be1c40a5a21376a9c6038,
         type: 3}
       propertyPath: range
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 221101145, guid: 72041921a80be1c40a5a21376a9c6038, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72041921a80be1c40a5a21376a9c6038, type: 3}
@@ -7187,9 +7187,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0, g: 0.42125544, b: 0.7372549, a: 1}
-  m_Intensity: 1
-  m_Range: 150
+  m_Color: {r: 1, g: 0, b: 0.95506525, a: 1}
+  m_Intensity: 0.9
+  m_Range: 1000
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -7223,7 +7223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718042927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.71, y: 3.19, z: 17}
+  m_LocalPosition: {x: -23.09, y: 4.5, z: 17}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8725,8 +8725,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.60262924, g: 0.19784619, b: 0.735849, a: 1}
-  m_Intensity: 0.8
+  m_Color: {r: 0, g: 0.52797985, b: 1, a: 1}
+  m_Intensity: 1.5
   m_Range: 200
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -12004,8 +12004,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.60262924, g: 0.19784619, b: 0.735849, a: 1}
-  m_Intensity: 0.8
+  m_Color: {r: 0.9622642, g: 0, b: 0.93933713, a: 1}
+  m_Intensity: 1.5
   m_Range: 200
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -12040,7 +12040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235082988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.39, y: 3.19, z: -5.01}
+  m_LocalPosition: {x: 15.39, y: 3.19, z: -9.5}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13191,14 +13191,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.4789886
       objectReference: {fileID: 0}
-    - target: {fileID: 221101145, guid: 72041921a80be1c40a5a21376a9c6038, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5958278807988549920, guid: 72041921a80be1c40a5a21376a9c6038,
         type: 3}
       propertyPath: range
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 221101145, guid: 72041921a80be1c40a5a21376a9c6038, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72041921a80be1c40a5a21376a9c6038, type: 3}
@@ -17891,7 +17891,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.43731204, g: 0.2476415, b: 0.5, a: 1}
+  m_Color: {r: 0, g: 0.84622765, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 200
   m_SpotAngle: 30
@@ -17914,7 +17914,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 0
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
